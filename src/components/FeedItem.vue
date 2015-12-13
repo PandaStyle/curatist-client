@@ -9,19 +9,14 @@
       <div class="summary">{{item.summary}}</div>
       <div class=meta>
         <span class="host">{{item.feed}}</span>
-        <span class="diff">{{item.diff}}</span>
+        <span class="diff">{{item.diff}} ago</span>
       </div>
     </header>
   </div>
 </template>
 
 <script type="text/babel">
-
-
-
-
   export default {
-
     name: 'FeedItem',
 
     props: {

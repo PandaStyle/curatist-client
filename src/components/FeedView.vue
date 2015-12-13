@@ -25,6 +25,9 @@
     import InspItem from './InspItem.vue'
     import Salvattore from 'salvattore'
 
+    const API_URL_FEED = 'http://www.curatist.co:8081/feed/river/';
+    const API_URL_INSP = 'http://www.curatist.co:8081/getposts/';
+
     export default {
         name: 'FeedView',
 
@@ -36,7 +39,7 @@
         data () {
             return {
                 items: null,
-                apiURL: 'http://www.curatist.co/feed/river/',
+                apiURL: "",
                 salvattoreInitialized: false,
                 isInspiration: false
             }
@@ -48,12 +51,12 @@
                         type =  transition.to.params.type,
                         self = this;
 
-                this.apiURL = this.apiURL + type;
+                this.apiURL = API_URL_FEED + type;
                 this.isInspiration = type == "inspiration";
 
 
                 if(this.isInspiration){
-                    this.apiURL = 'http://www.curatist.co/getposts/0/40';
+                    this.apiURL = API_URL_INSP + '0/40';
                 }
 
 
