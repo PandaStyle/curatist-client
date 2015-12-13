@@ -1,0 +1,97 @@
+<template>
+    <div class="feed-view grid" data-columns v-if="!isInspiration">
+        <feed-item
+                class="feeditem"
+                v-for="item in items"
+                :item="item"
+                track-by="id"
+                transition="expand">
+        </feed-item>
+    </div>
+
+    <div class="feed-view grid inspiration" data-columns v-if="isInspiration">
+        <insp-item
+                class="inspitem"
+                v-for="item in items"
+                :item="item"
+                track-by="id"
+                transition="expand">
+        </insp-item>
+    </div>
+</template>
+
+<script type="text/babel">
+    import FeedItem from './FeedItem.vue'
+    import InspItem from './InspItem.vue'
+    import Salvattore from 'salvattore'
+
+    export default {
+        name: 'FeedView',
+
+        components: {
+            FeedItem,
+            InspItem
+        },
+
+        data () {
+            return {
+                items: null,
+                apiURL: 'http://www.curatist.co/feed/river/',
+                salvattoreInitialized: false,
+                isInspiration: false
+            }
+        },
+
+        route: {
+            data (transition) {
+                let
+                        type =  transition.to.params.type,
+                        self = this;
+
+                this.apiURL = this.apiURL + type;
+                this.isInspiration = type == "inspiration";
+
+
+                if(this.isInspiration){
+                    this.apiURL = 'http://www.curatist.co/getposts/0/40';
+                }
+
+
+                this.$http.get(this.apiURL, function (results, status, request) {
+
+                    transition.next({items: this.isInspiration ? results : results.res});
+
+                    self.$nextTick(function () {
+                        if(!self.salvattoreInitialized){
+                            Salvattore.init();
+                            self.salvattoreInitialized = true;
+                        }
+                    });
+
+                }).error(function (data, status, request) {
+                    throw (data);
+                })
+            },
+            canReuse: false
+        },
+
+        ready () {
+            console.log("Feedview Ready, item count: ", document.getElementsByClassName("feed-item").length);
+        }
+    }
+</script>
+
+<style>
+    /* always present */
+    .expand-transition {
+        transition: opacity .3s ease;
+    }
+
+    /* .expand-enter defines the starting state for entering */
+    /* .expand-leave defines the ending state for leaving */
+    .expand-enter, .expand-leave {
+
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+</style>
