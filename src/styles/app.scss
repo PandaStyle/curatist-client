@@ -1,13 +1,21 @@
 @import "/node_modules/normalize.css/normalize.css";
+@import "/node_modules/nprogress/nprogress.css";
 
 @import "globals";
 @import "salvattore";
-@import "spinner";
 
 body{
   background-color: $body-background;
   font-family: 'Muli', sans-serif;
   font-size: 16px;
+}
+
+#nprogress .bar {
+  background-color: $red;
+}
+#nprogress .spinner-icon {
+  border-top-color: $red;
+  border-left-color: $red;
 }
 
 

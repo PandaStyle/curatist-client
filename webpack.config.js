@@ -13,7 +13,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /node_modules\/masonry-layout/,
+        test: /imagesloaded/,
         loader: 'imports?define=>false&this=>window'
       },
       {

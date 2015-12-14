@@ -24,6 +24,9 @@
     import FeedItem from './FeedItem.vue'
     import InspItem from './InspItem.vue'
     import Salvattore from 'salvattore'
+    import NProgress from '../../node_modules/nprogress/nprogress.js';
+
+    import imagesLoaded from '../../node_modules/imagesloaded/imagesloaded.js';
 
     const API_URL_FEED = 'http://www.curatist.co:8081/feed/river/';
     const API_URL_INSP = 'http://www.curatist.co:8081/getposts/';
@@ -59,16 +62,18 @@
                     this.apiURL = API_URL_INSP + '0/40';
                 }
 
-
+                NProgress.start();
                 this.$http.get(this.apiURL, function (results, status, request) {
 
                     transition.next({items: this.isInspiration ? results : results.res});
 
                     self.$nextTick(function () {
+                        console.log("nextck");
                         if(!self.salvattoreInitialized){
                             Salvattore.init();
                             self.salvattoreInitialized = true;
                         }
+                        this.attachImagesloaded();
                     });
 
                 }).error(function (data, status, request) {
@@ -80,7 +85,25 @@
 
         ready () {
             console.log("Feedview Ready, item count: ", document.getElementsByClassName("feed-item").length);
-        }
+        },
+
+        methods: {
+            attachImagesloaded () {
+
+
+                    var grid = this.$el.nextSibling;
+                    var imgLoad = imagesLoaded(grid);
+
+
+                    imgLoad.on( 'progress', function( instance, image ) {
+                        NProgress.inc();
+                    });
+                    imgLoad.on( 'always', function ( instance ) {
+                        NProgress.done();
+                    } );
+
+            }
+        },
     }
 </script>
 

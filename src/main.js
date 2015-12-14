@@ -9,8 +9,12 @@ import FeedItem from './components/FeedItem.vue'
 import InspItem from './components/InspItem.vue'
 
 import $ from 'jquery';
+import NProgress from '../node_modules/nprogress/nprogress.js';
+import imagesLoaded from '../node_modules/imagesloaded/imagesloaded.js';
+
 
 Vue.directive('img', function(url) {
+
   var img = new Image();
   img.src = url;
 
@@ -19,6 +23,8 @@ Vue.directive('img', function(url) {
     $(this.el).addClass("loaded")
   }.bind(this);
 });
+
+
 
 
 Vue.use(Router);

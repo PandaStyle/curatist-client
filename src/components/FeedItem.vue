@@ -1,5 +1,5 @@
 <template>
-  <div class="tile feed-item">
+  <div class="tile feed-item square">
     <a class="overlay" href="{{item.link}}" target="_blank">
       <div class="lay"></div>
     </a>
