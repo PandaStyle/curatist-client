@@ -24,9 +24,9 @@
     import FeedItem from './FeedItem.vue'
     import InspItem from './InspItem.vue'
     import Salvattore from 'salvattore'
-    import NProgress from '../../node_modules/nprogress/nprogress.js';
+    import NProgress from 'nprogress';
 
-    import imagesLoaded from '../../node_modules/imagesloaded/imagesloaded.js';
+    import imagesLoaded from 'imagesloaded';
 
     const API_URL_FEED = 'http://www.curatist.co:8081/feed/river/';
     const API_URL_INSP = 'http://www.curatist.co:8081/getposts/';
