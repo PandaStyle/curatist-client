@@ -40,13 +40,17 @@
 
         data () {
             return {
-                isMenuActive: false
+                isMenuActive: false,
+                isListViewActive: false
             }
         },
 
         methods: {
             toggleMenu () {
                 this.isMenuActive = !this.isMenuActive;
+            },
+            toggleView () {
+                this.isListViewActive = !this.isListViewActive;
             }
         }
 

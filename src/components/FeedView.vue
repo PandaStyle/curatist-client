@@ -1,4 +1,6 @@
 <template>
+    <div v-if="$loadingRouteData">Loading ...</div>
+
     <div class="feed-view grid" data-columns v-if="!isInspiration">
         <feed-item
                 class="feeditem"
@@ -18,11 +20,23 @@
                 transition="expand">
         </insp-item>
     </div>
+
+    <div class="feed-view grid" data-columns v-if="!isListView">
+        <list-item
+                class="listitem"
+                v-for="item in items"
+                :item="item"
+                track-by="id"
+                transition="expand">
+        </list-item>
+    </div>
+
 </template>
 
 <script type="text/babel">
     import FeedItem from './FeedItem.vue'
     import InspItem from './InspItem.vue'
+    import Navbar from './Navbar.vue'
     import Salvattore from 'salvattore'
     import NProgress from 'nprogress';
 

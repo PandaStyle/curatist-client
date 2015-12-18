@@ -12,6 +12,7 @@ body{
 
 #nprogress .bar {
   background-color: $red;
+  height: 3px;
 }
 #nprogress .spinner-icon {
   border-top-color: $red;
