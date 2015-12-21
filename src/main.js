@@ -5,6 +5,8 @@ import VueResource from 'vue-resource'
 import App from './components/App.vue'
 import Navbar from './components/Navbar.vue'
 import FeedView from './components/FeedView.vue'
+import TileView from './components/TileView.vue'
+import ListView from './components/ListView.vue'
 import FeedItem from './components/FeedItem.vue'
 import InspItem from './components/InspItem.vue'
 
@@ -25,8 +27,6 @@ Vue.directive('img', function(url) {
 });
 
 
-
-
 Vue.use(Router);
 Vue.use(VueResource);
 
@@ -34,19 +34,28 @@ Vue.use(VueResource);
 var router = new Router({
   transitionOnLoad: true,
   hashbang: false
-})
+});
 
 router.map({
   '/feed/:type': {
-    component: FeedView
+    component: FeedView,
+      subRoutes: {
+          '/tile': {
+              component: TileView
+          },
+          '/list': {
+              component: ListView
+          }
+      }
   }
-})
+});
 
 router.redirect({
   '*': '/feed/design'
-})
+});
 
 router.start(App, '#app');
+
 
 
 

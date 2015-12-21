@@ -9,8 +9,10 @@
     import Navbar from './Navbar.vue'
 
     export default {
-        data: {
-            isListView: false
+        data () {
+            return {
+                view: ""
+            }
         },
         components: {
             Navbar

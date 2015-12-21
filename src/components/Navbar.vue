@@ -4,10 +4,10 @@
             <img src="../img/curatist-logo-o-o-white.png" alt=""/>
         </div>
         <ul class="menu">
-            <li><a v-link="{ path: '/feed/design' }">Design</a></li>
-            <li><a v-link="{ path: '/feed/technology' }">Tech</a></li>
-            <li><a v-link="{ path: '/feed/business' }">Business</a></li>
-            <li><a v-link="{ path: '/feed/inspiration' }">Inspiration</a></li>
+            <li><a v-link="getPath ('/feed/design')">Design</a></li>
+            <li><a v-link="getPath ('/feed/technology')">Tech</a></li>
+            <li><a v-link="getPath ('/feed/business')">Business</a></li>
+            <li><a v-link="{ path: '/feed/inspiration/tile' }">Inspiration</a></li>
         </ul>
         <div class="hamburger button_container"  v-bind:class="{active: isMenuActive}" id="toggle" @click="toggleMenu">
             <span class="top"></span>
@@ -15,6 +15,7 @@
             <span class="bottom"></span>
         </div>
     </div>
+    <span @click="toggleView">TOOGLLLE</span>
     <menu v-bind:class="{open: isMenuActive}">
         <ul>
             <li>
@@ -40,8 +41,7 @@
 
         data () {
             return {
-                isMenuActive: false,
-                isListViewActive: false
+                isMenuActive: false
             }
         },
 
@@ -50,8 +50,22 @@
                 this.isMenuActive = !this.isMenuActive;
             },
             toggleView () {
-                this.isListViewActive = !this.isListViewActive;
-            }
+                    if(this.$route.params.type == "inspiration"){
+                        return;
+                    }
+                    var otherview = this.getView() == "tile" ? "list" : "tile";
+                    this.$route.router.go(otherview);
+            },
+            getView () {
+                var p = this.$route.path;
+                return p.substr(p.lastIndexOf('/') + 1);
+            },
+            getPath (path) {
+                    return {
+                        path: path + "/" + this.getView()
+                    }
+            },
+
         }
 
     }
