@@ -43,8 +43,12 @@
         data () {
             return {
                 isMenuActive: false,
-                view: this.$route.path.substr(this.$route.path.lastIndexOf('/') + 1)
+                view: ""
             }
+        },
+
+        ready () {
+            this.view = this.$route.path.substr(this.$route.path.lastIndexOf('/') + 1);
         },
 
         methods: {
