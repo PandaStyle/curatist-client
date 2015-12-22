@@ -2,7 +2,8 @@
   .wrapper{
     margin:3em 0;
   }
-  a,a:visited,a:hover,a:active{
+
+  a.frame,a.frame:visited,a.frame:hover,a.frame:active{
     -webkit-backface-visibility:hidden;
     backface-visibility:hidden;
     position:relative;
@@ -11,30 +12,30 @@
     color:#81b3d2;
     font-size:2.5em;
   }
-  a:hover{
+  a.frame:hover{
     color:#d73444;
   }
-  a.before:before,a.after:after{
+  a.frame:before,a.frame:after{
     content: "";
     transition:0.5s all ease;
     -webkit-backface-visibility:hidden;
     backface-visibility:hidden;
     position:absolute;
   }
-  a.before:before{
+  a.frame:before{
     top:-0.25em;
   }
-  a.after:after{
+  a.frame:after{
     bottom:-0.25em;
   }
-  a.before:before,a.after:after{
+  a.frame:before,a.frame:after{
     height:5px;
     height:0.35rem;
     width:0;
     background:#d73444;
   }
 
-  a.before:hover:before,a.after:hover:after{
+  a.frame:hover:before,a.after:hover:after{
     width:100%;
   }
 
@@ -44,7 +45,7 @@
     font-size:2.5em;
     overflow:hidden;
 
-  a{
+  a.frame{
     position:static;
     font-size:100%;
     padding:0.2em 0.4em;

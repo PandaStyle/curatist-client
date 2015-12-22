@@ -26,7 +26,21 @@ $button-width: 27px;
   ul.menu {
     text-align: center;
     padding-top: 3px;
+    padding-left: 17px;
+
+    .view-switcher{
+      float: left;
+      font-size: 20px;
+      color: $summary-color;
+      margin-top: 8px;
+
+      &:hover {
+        color: $red;
+        cursor: pointer;
+      }
+    }
   }
+
 
   li {
     display: inline-block;
@@ -53,10 +67,10 @@ $button-width: 27px;
     display: block;
     font-size: 23px;
     float: right;
-    color: $grey;
+    color: $summary-color;
     position: absolute;
     right: 50px;
-    top: 95px;
+    top: 100px;
     z-index: 1000;
 
   }

@@ -51,7 +51,7 @@ router.map({
 });
 
 router.redirect({
-  '*': '/feed/design'
+  '*': '/feed/design/tile'
 });
 
 router.start(App, '#app');

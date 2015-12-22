@@ -4,6 +4,7 @@
             <img src="../img/curatist-logo-o-o-white.png" alt=""/>
         </div>
         <ul class="menu">
+            <li @click="toggleView" class="view-switcher" v-bind:class="getViewSwitcherClass()"></li>
             <li><a v-link="getPath ('/feed/design')">Design</a></li>
             <li><a v-link="getPath ('/feed/technology')">Tech</a></li>
             <li><a v-link="getPath ('/feed/business')">Business</a></li>
@@ -15,7 +16,7 @@
             <span class="bottom"></span>
         </div>
     </div>
-    <span @click="toggleView">TOOGLLLE</span>
+
     <menu v-bind:class="{open: isMenuActive}">
         <ul>
             <li>
@@ -41,7 +42,8 @@
 
         data () {
             return {
-                isMenuActive: false
+                isMenuActive: false,
+                view: this.$route.path.substr(this.$route.path.lastIndexOf('/') + 1)
             }
         },
 
@@ -53,7 +55,8 @@
                     if(this.$route.params.type == "inspiration"){
                         return;
                     }
-                    var otherview = this.getView() == "tile" ? "list" : "tile";
+                    var otherview = this.view == "tile" ? "list" : "tile";
+                    this.view = otherview;
                     this.$route.router.go(otherview);
             },
             getView () {
@@ -62,9 +65,12 @@
             },
             getPath (path) {
                     return {
-                        path: path + "/" + this.getView()
+                        path: path + "/" + this.view
                     }
             },
+            getViewSwitcherClass () {
+                return this.view == "tile" ? "icon-dial-pad" : "icon-text";
+            }
 
         }
 
