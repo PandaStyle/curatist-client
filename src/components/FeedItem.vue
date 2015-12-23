@@ -11,6 +11,7 @@
         <div class=meta>
           <span class="host">{{item.feed}}</span>
           <span class="diff">{{item.diff}} ago</span>
+          <span class="share icon-share"></span>
         </div>
       </header>
     </a>

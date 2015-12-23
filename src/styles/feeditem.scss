@@ -9,7 +9,7 @@
   min-height: 200px;
   margin: 5px 10px 40px;
   overflow: hidden;
-  border-radius: 2px;
+  border: 1px solid transparent;
 
   &.loading {
     min-height: 200px;
@@ -30,7 +30,7 @@
     height: 100%;
     position: absolute;
     opacity: 0;
-    border-radius: $border-radius;
+    //border-radius: $border-radius;
     z-index: 1;
   }
 
@@ -98,20 +98,42 @@
       .diff {
         color: $summary-color;
       }
+
+      .share {
+        @include defaulttransition();
+
+        float: right;
+        color: white;
+        font-size: 20px;
+        opacity: 0;
+
+        &:hover {
+          color: $red;
+        }
+      }
+
     }
   }
 
   &:hover {
+    @include defaulttransition();
+
     cursor: pointer;
+    border: 1px solid $summary-color;
+    border-radius: 1px;
   }
 
 
   &:hover img {
-    -webkit-transform: scale(1.07);
-    -moz-transform: scale(1.07);
-    -ms-transform: scale(1.07);
-    -o-transform: scale(1.07);
-    transform: scale(1.07);
+    -webkit-transform: scale(1.06);
+    -moz-transform: scale(1.06);
+    -ms-transform: scale(1.06);
+    -o-transform: scale(1.06);
+    transform: scale(1.06);
+  }
+
+  &:hover header .meta .share  {
+    opacity: 1;
   }
   /*
         &:hover .overlay .lay {
