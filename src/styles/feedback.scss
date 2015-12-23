@@ -1,0 +1,40 @@
+@import "globals";
+
+#feedback-container {
+  max-width: 500px;
+  margin: 20% auto;
+  position: relative;
+
+  textarea, input {
+    background: none;
+    border: 1px solid $grey;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    line-height: 22px;
+  }
+
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
+
+  #doorbell-powered-by {
+    display: none;
+  }
+  #doorbell-submit-button {
+    font-size: 20px;
+    padding: 10px 15px;
+    border: 1px solid #B9B9B9;
+    background-color: #B2E2B6;
+    width: 50%;
+    float: left;
+  }
+
+  .cancel {
+    right: 20%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10px;
+    z-index: 10;
+  }
+}

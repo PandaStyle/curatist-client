@@ -1,0 +1,22 @@
+$bg-color: #F1F1F1;
+$black: #444;
+
+.light {
+  background-color: $bg-color;
+
+  .navbar {
+    background-color: $bg-color;
+  }
+
+  .feed-item {
+    .title{
+      color: $black;
+    }
+  }
+  .list-item {
+    .title{
+      color: $black;
+    }
+  }
+
+}

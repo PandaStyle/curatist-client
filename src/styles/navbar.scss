@@ -1,4 +1,5 @@
 @import "globals";
+@import "feedback";
 
 $button-height: 27px;
 $button-width: 27px;
@@ -7,7 +8,6 @@ $button-width: 27px;
   z-index: 1;
   background: $body-background;
   top: 0;
-  box-shadow: 0 0 1px rgba(0,0,0,0.15);
 
   padding-left: 43px;
   padding-right: 50px;
@@ -203,6 +203,14 @@ menu {
         }
       }
 
+    },
+
+    li.layout {
+      .layout-selector {
+        .active {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

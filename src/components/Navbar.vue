@@ -18,18 +18,30 @@
     </div>
 
     <menu v-bind:class="{open: isMenuActive}">
-        <ul>
-            <li>
-                <a class="bordered" href="">Layouts</a>
+        <ul class="menu-list" v-show="!isFeedbackActive">
+            <li class="layout">
+                <a class="bordered" href="#" @click="toggleThemeSelector">Layouts</a>
+                <span class="layout-selector" v-show="isThemeSelectorActive">
+                    <span class="light" v-bind:class="{active: this.$root.$data.style=='light'}" @click="toggleTheme">light</span>
+                    <span class="dark" v-bind:class="{active: this.$root.$data.style=='dark'}" @click="toggleTheme">dark</span>
+                </span>
             </li>
             <li>
-                <a class="bordered" href="">Suggest a feed</a>
-                <input class="suggest" type="text"/>
+                <a class="bordered" href="#" @click="toggleFeedback">Drop us a line</a>
             </li>
             <li>
-                <a class="bordered" href="">About</a>
+                <a class="bordered" href="#" @click="toggleFeedback">Send Feedback</a>
+            </li>
+            <li>
+                <a class="bordered" href="#">About</a>
+            </li>
+            <li>
+                <a class="bordered" href="#">Socialize</a>
             </li>
         </ul>
+        <div id="feedback-container"  v-show="isFeedbackActive">
+            <a class="cancel" href="#" @click="toggleFeedback"> Go back </a>
+        </div>
     </menu>
 </template>
 
@@ -43,7 +55,9 @@
         data () {
             return {
                 isMenuActive: false,
-                view: ""
+                view: "",
+                isFeedbackActive: false,
+                isThemeSelectorActive: false
             }
         },
 
@@ -54,6 +68,15 @@
         methods: {
             toggleMenu () {
                 this.isMenuActive = !this.isMenuActive;
+            },
+            toggleFeedback () {
+                this.isFeedbackActive = !this.isFeedbackActive;
+            },
+            toggleThemeSelector () {
+                this.isThemeSelectorActive = !this.isThemeSelectorActive;
+            },
+            toggleTheme (a) {
+                this.$root.$data.style = $(a.currentTarget).attr('class');
             },
             toggleView () {
                     if(this.$route.params.type == "inspiration"){

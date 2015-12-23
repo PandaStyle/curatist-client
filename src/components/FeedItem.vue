@@ -1,20 +1,17 @@
 <template>
   <div class="tile feed-item square">
-    <a href="" class="frame before after">
-      <a class="overlay" href="{{item.link}}" target="_blank" >
-        <div class="lay"></div>
-      </a>
       <div class="tile-image"><img   v-img="item.image" alt=""/></div>
       <header>
-        <div class="title">{{item.title}}</div>
-        <div class="summary">{{item.summary}}</div>
+        <a class="title" href="{{item.link}}">{{item.title}}</a>
+        <div class="summary">{{{item.summary}}}</div>
         <div class=meta>
-          <span class="host">{{item.feed}}</span>
+          <a class="host" href="{{item.link}}">{{item.feed}}</a>
           <span class="diff">{{item.diff}} ago</span>
-          <span class="share icon-share"></span>
+          <span class="share general icon-share" @click="toggleShare"></span>
+          <span class="share twitter icon-twitter-with-circle" v-show="isShareActive"></span>
+          <span class="share facebook icon-facebook-with-circle" v-show="isShareActive"></span>
         </div>
       </header>
-    </a>
   </div>
 </template>
 
@@ -25,7 +22,20 @@
     props: {
       item: Object,
       isInspiration: Boolean
+    },
+
+    data () {
+      return {
+        isShareActive: false
+      }
+    },
+
+    methods: {
+      toggleShare () {
+        this.isShareActive = !this.isShareActive;
+      }
     }
+
   }
 </script>
 
