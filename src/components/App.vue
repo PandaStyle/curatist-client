@@ -18,13 +18,7 @@
         components: {
             Navbar
         },
-        watch: {
-            'style': function (val, oldVal) {
-                $('body').attr("class", val);
-            }
-        },
         ready () {
-            $('body').attr("class", this.style);
             $(window).on("scrollstart", function(){ $('body').addClass('disable-hover');});
             $(window).on("scrollstop", function(){ $('body').removeClass('disable-hover');});
         }

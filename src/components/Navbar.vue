@@ -22,8 +22,13 @@
             <li class="layout">
                 <a class="bordered" href="#" @click="toggleThemeSelector">Layouts</a>
                 <span class="layout-selector" v-show="isThemeSelectorActive">
-                    <span class="light" v-bind:class="{active: this.$root.$data.style=='light'}" @click="toggleTheme">light</span>
-                    <span class="dark" v-bind:class="{active: this.$root.$data.style=='dark'}" @click="toggleTheme">dark</span>
+                    <div class="switch-button">
+                        <span class="slider {{theme}}"></span>
+                        <button id="light" class="switch-button-case" @click="toggleTheme">Light</button>
+                        <button id="dark" class="switch-button-case" @click="toggleTheme">Dark</button>
+                    </div>
+                   <!-- <span class="light" v-bind:class="{active: this.$root.$data.style=='light'}" @click="toggleTheme">light</span>
+                    <span class="dark" v-bind:class="{active: this.$root.$data.style=='dark'}" @click="toggleTheme">dark</span>-->
                 </span>
             </li>
             <li>
@@ -54,14 +59,20 @@
 
         data () {
             return {
-                isMenuActive: false,
                 view: "",
+                theme: "",
+                isMenuActive: false,
                 isFeedbackActive: false,
                 isThemeSelectorActive: false
             }
         },
-
+        watch: {
+            'theme': function (val, oldVal) {
+                $('body').attr("class", val);
+            }
+        },
         ready () {
+            this.theme = "dark";
             this.view = this.$route.path.substr(this.$route.path.lastIndexOf('/') + 1);
         },
 
@@ -76,7 +87,7 @@
                 this.isThemeSelectorActive = !this.isThemeSelectorActive;
             },
             toggleTheme (a) {
-                this.$root.$data.style = $(a.currentTarget).attr('class');
+                this.theme = $(a.currentTarget).attr('id');
             },
             toggleView () {
                     if(this.$route.params.type == "inspiration"){
