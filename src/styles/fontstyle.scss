@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('../fonts/icomoon.eot?4ofrly');
-    src:    url('../fonts/icomoon.eot?4ofrly#iefix') format('embedded-opentype'),
-        url('../fonts/icomoon.ttf?4ofrly') format('truetype'),
-        url('../fonts/icomoon.woff?4ofrly') format('woff'),
-        url('../fonts/icomoon.svg?4ofrly#icomoon') format('svg');
+    src:    url('../fonts/icomoon.eot?w5fwm3');
+    src:    url('../fonts/icomoon.eot?w5fwm3#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?w5fwm3') format('truetype'),
+    url('../fonts/icomoon.woff?w5fwm3') format('woff'),
+    url('../fonts/icomoon.svg?w5fwm3#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,8 +24,17 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-get-pocket:before {
+    content: "\e908";
+}
+.icon-cross:before {
+    content: "\e909";
+}
 .icon-dial-pad:before {
     content: "\e900";
+}
+.icon-mail:before {
+    content: "\e90a";
 }
 .icon-share:before {
     content: "\e901";
@@ -36,10 +45,16 @@
 .icon-facebook-with-circle:before {
     content: "\e903";
 }
+.icon-facebook:before {
+    content: "\e906";
+}
 .icon-google-with-circle:before {
     content: "\e904";
 }
 .icon-twitter-with-circle:before {
     content: "\e905";
+}
+.icon-twitter:before {
+    content: "\e907";
 }
 

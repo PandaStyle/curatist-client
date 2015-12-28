@@ -1,6 +1,8 @@
 @import "globals";
 
 #feedback-container {
+  font-family: 'Muli', sans-serif;
+  font-size: 14px;
   max-width: 500px;
   margin: 20% auto;
   position: relative;
@@ -13,28 +15,28 @@
     line-height: 22px;
   }
 
-  textarea:focus,
-  input:focus {
-    outline: none;
-  }
-
   #doorbell-powered-by {
-    display: none;
+    color: $grey;
+    display: none !important;
   }
   #doorbell-submit-button {
-    font-size: 20px;
-    padding: 10px 15px;
-    border: 1px solid #B9B9B9;
+    font-size: 18px;
+    padding: 15px 15px;
+    border: none;
     background-color: #B2E2B6;
     width: 50%;
     float: left;
+
+    &:hover {
+      background-color: #8FCE94;
+    }
   }
 
   .cancel {
     right: 20%;
     margin: 0 auto;
     position: absolute;
-    bottom: 10px;
+    bottom: 30px;
     z-index: 10;
   }
 }
