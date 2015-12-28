@@ -58,10 +58,6 @@
                 })
             },
             canReuse: false
-        },
-
-        ready () {
-            console.log("Feedview Ready, item count: ", document.getElementsByClassName("feed-item").length);
         }
     }
 </script>

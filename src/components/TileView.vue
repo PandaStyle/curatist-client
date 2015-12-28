@@ -69,7 +69,6 @@
                     transition.next({items: this.isInspiration ? results : results.res});
 
                     self.$nextTick(function () {
-                        console.log("nextck");
                         if(!self.salvattoreInitialized){
                             Salvattore.init();
                             self.salvattoreInitialized = true;
@@ -82,10 +81,6 @@
                 })
             },
             canReuse: false
-        },
-
-        ready () {
-            console.log("Feedview Ready, item count: ", document.getElementsByClassName("feed-item").length);
         },
 
         methods: {
