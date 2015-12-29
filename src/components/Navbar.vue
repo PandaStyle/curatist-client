@@ -18,40 +18,39 @@
     </div>
 
     <menu v-bind:class="{open: isMenuActive}">
-        <ul class="menu-list" v-show="!isFeedbackActive">
-            <li class="layout">
-                <a class="bordered" href="#" @click="toggleThemeSelector">Layouts</a>
-                <span class="layout-selector" v-show="isThemeSelectorActive">
-                    <div class="switch-button">
-                        <span class="slider {{theme}}"></span>
-                        <button id="light" class="switch-button-case" @click="toggleTheme">Light</button>
-                        <button id="dark" class="switch-button-case" @click="toggleTheme">Dark</button>
-                    </div>
-                   <!-- <span class="light" v-bind:class="{active: this.$root.$data.style=='light'}" @click="toggleTheme">light</span>
-                    <span class="dark" v-bind:class="{active: this.$root.$data.style=='dark'}" @click="toggleTheme">dark</span>-->
-                </span>
+        <ul class="menu-list" v-bind:class="{border: activeMenuView}">
+            <li>
+                <a data-menuview="MenuWhat" class="bordered" v-bind:class="{active: activeMenuView=='MenuWhat'}" href="#" @click="toggleMenuView">What?</a>
             </li>
             <li>
-                <a class="bordered" href="#" @click="toggleFeedback">Drop us a line</a>
+                <a data-menuview="MenuLayout" class="bordered" v-bind:class="{active: activeMenuView=='MenuLayout'}" href="#" @click="toggleMenuView">Theme</a>
             </li>
             <li>
-                <a class="bordered" href="#" @click="toggleFeedback">Send Feedback</a>
+                <a data-menuview="MenuFeedback" class="bordered" v-bind:class="{active: activeMenuView=='MenuFeedback'}" href="#" @click="toggleMenuView">Feedback</a>
             </li>
             <li>
-                <a class="bordered" href="#">About</a>
+                <a data-menuview="MenuAbout"  data-menuview="layouts"class="bordered" v-bind:class="{active: activeMenuView=='MenuAbout'}" href="#" @click="toggleMenuView">Who?</a>
             </li>
             <li>
-                <a class="bordered" href="#">Socialize</a>
+                <a data-menuview="MenuSocial" data-menuview="layouts" class="bordered" v-bind:class="{active: activeMenuView=='MenuSocial'}" href="#" @click="toggleMenuView">Socialize</a>
             </li>
         </ul>
-        <div id="feedback-container"  v-show="isFeedbackActive">
-            <a class="cancel" href="#" @click="toggleFeedback"> Go back </a>
+        <div class="menucontent">
+            <component :is="activeMenuView" transition-mode="out-in" transition="expand" keep-alive>
+                <!-- component changes when vm.currentview changes! -->
+            </component>
         </div>
+
     </menu>
 </template>
 
 <script type="text/babel">
     import $ from 'jquery';
+    import MenuWhat from './MenuWhat.vue';
+    import MenuLayout from './MenuLayout.vue';
+    import MenuFeedback from './MenuFeedback.vue';
+    import MenuAbout from './MenuAbout.vue';
+    import MenuSocial from './MenuSocial.vue';
 
     export default {
 
@@ -60,19 +59,19 @@
         data () {
             return {
                 view: "",
-                theme: "",
                 isMenuActive: false,
-                isFeedbackActive: false,
-                isThemeSelectorActive: false
+                activeMenuView: ""
             }
         },
-        watch: {
-            'theme': function (val, oldVal) {
-                $('body').attr("class", val);
-            }
+        components: {
+            MenuWhat,
+            MenuLayout,
+            MenuFeedback,
+            MenuAbout,
+            MenuSocial
         },
+
         ready () {
-            this.theme = "dark";
             this.view = this.$route.path.substr(this.$route.path.lastIndexOf('/') + 1);
         },
 
@@ -80,14 +79,8 @@
             toggleMenu () {
                 this.isMenuActive = !this.isMenuActive;
             },
-            toggleFeedback () {
-                this.isFeedbackActive = !this.isFeedbackActive;
-            },
-            toggleThemeSelector () {
-                this.isThemeSelectorActive = !this.isThemeSelectorActive;
-            },
-            toggleTheme (a) {
-                this.theme = $(a.currentTarget).attr('id');
+            toggleMenuView (a) {
+                this.activeMenuView = a.currentTarget.attributes[0].value;
             },
             toggleView () {
                     if(this.$route.params.type == "inspiration"){

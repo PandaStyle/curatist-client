@@ -2,6 +2,7 @@ $red: #DC8A8A;
 $grey: #a8acb5;
 $body-background: #353535;
 $dark-grey: #56585F;
+$light-grey: #D8D8D8;
 $tile-color: beige;
 $summary-color: #968F8F;
 
@@ -26,6 +27,17 @@ img {
 
 .disable-hover {
   pointer-events: none;
+}
+
+
+/* always present */
+.expand-transition {
+  transition: opacity .3s ease;
+}
+.expand-enter, .expand-leave {
+
+  opacity: 0;
+  transition: opacity .3s ease;
 }
 
 

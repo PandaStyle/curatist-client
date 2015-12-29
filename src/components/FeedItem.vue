@@ -2,7 +2,7 @@
   <div class="tile feed-item square">
       <div class="tile-image"><img   v-img="item.image" alt=""/></div>
       <header>
-        <a class="title" href="{{item.link}}">{{item.title}}</a>
+        <a class="title" href="{{item.link}}" target="_blank">{{item.title}}</a>
         <div class="summary">{{{item.summary}}}</div>
         <div class=meta>
           <a class="host" href="{{item.link}}">{{item.feed}}</a>

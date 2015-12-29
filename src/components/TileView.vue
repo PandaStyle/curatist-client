@@ -102,18 +102,3 @@
         },
     }
 </script>
-
-<style>
-    /* always present */
-    .expand-transition {
-        transition: opacity .3s ease;
-    }
-
-    /* .expand-enter defines the starting state for entering */
-    /* .expand-leave defines the ending state for leaving */
-    .expand-enter, .expand-leave {
-
-        opacity: 0;
-        transition: opacity .3s ease;
-    }
-</style>
