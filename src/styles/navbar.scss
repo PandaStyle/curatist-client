@@ -46,11 +46,13 @@ $button-width: 27px;
     display: inline-block;
 
     a {
+      display: inline-block;
       font-size: 18px;
       font-family: 'Playfair Display', serif;
-      padding: 15px 20px;
+      padding: 0 20px 0 20px;
       text-decoration: none;
       color: $summary-color;
+      visibility: visible;
     }
     a:hover{
       @include defaulttransition();
@@ -254,5 +256,27 @@ menu {
       color: $dark-grey;
     }
   }
+}
+
+@media only screen
+and (max-width: 500px) {
+  .navbar .navlink {
+      visibility: hidden;
+      font-size: 0;
+      padding: 0 10px;
+    }
+  .navbar .navlink::first-letter {
+      visibility: visible;
+      font-size: 20px;
+    }
+
+  .navbar .link-border-left,
+  .navbar .link-border-right {
+    border: none !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+
 }
 

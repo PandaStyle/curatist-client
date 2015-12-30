@@ -64,6 +64,7 @@
                 }
 
                 NProgress.start();
+
                 this.$http.get(this.apiURL, function (results, status, request) {
 
                     transition.next({items: this.isInspiration ? results : results.res});
@@ -99,6 +100,6 @@
                 } );
 
             }
-        },
+        }
     }
 </script>
