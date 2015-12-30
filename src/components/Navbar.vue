@@ -1,14 +1,15 @@
 <template>
     <div class="navbar">
         <div class="logo">
-            <img src="../img/curatist-logo-o-o-white.png" alt=""/>
+            <img src="../img/LOGO-NEW-LIGHT.png" alt=""/>
         </div>
         <ul class="menu">
             <li @click="toggleView" class="view-switcher" v-bind:class="getViewSwitcherClass()"></li>
+            <li class="link-border-right"><a v-link="getPath ('/feed/all')">Overview</a></li>
             <li><a v-link="getPath ('/feed/design')">Design</a></li>
             <li><a v-link="getPath ('/feed/technology')">Tech</a></li>
             <li><a v-link="getPath ('/feed/business')">Business</a></li>
-            <li><a v-link="{ path: '/feed/inspiration/tile' }">Inspiration</a></li>
+            <li class="link-border-left"><a v-link="{ path: '/feed/inspiration/tile' }">Inspiration</a></li>
         </ul>
         <div class="hamburger button_container"  v-bind:class="{active: isMenuActive}" id="toggle" @click="toggleMenu">
             <span class="top"></span>
@@ -100,7 +101,7 @@
                     }
             },
             getViewSwitcherClass () {
-                return this.view == "tile" ? "icon-dial-pad" : "icon-text";
+                return this.view == "tile" ? "icon-text" : "icon-grid";
             }
 
         }

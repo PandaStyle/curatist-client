@@ -1,8 +1,8 @@
 <template>
     <div class="menuwhat">
-        <h2>What is The Curatist? </h2>
+        <h2>What is it?</h2>
         <p>
-            The Curatist is a curated newsfeed that keeps you inspired and informed on the world of architecture.<br/>
+            The Curatist is a curated newsfeed that keeps you inspired and informed on the world of architecture.
             It’s a smart dashboard and inspirational tool made for architects, engineers, real estate developers and design-enthusiasts.
             <br/>
             <br/>

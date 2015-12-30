@@ -18,8 +18,8 @@ $button-width: 27px;
   }
 
   .logo img{
-    margin: 20px auto;
-    height: 55px;
+    margin: 0 auto 10px;
+    height: 100px;
   }
 
 
@@ -59,11 +59,19 @@ $button-width: 27px;
     a.v-link-active{
       color: $red;
     }
+    &.link-border-right {
+      padding-right: 10px;
+      border-right: 1px solid $summary-color;
+    }
+    &.link-border-left  {
+      padding-left: 10px;
+      border-left: 1px solid $summary-color;
+    }
   }
 
   .hamburger {
     float: right;
-    margin: 16px;
+    margin: 32px 16px;
     display: block;
     font-size: 23px;
     float: right;
@@ -232,7 +240,7 @@ menu {
 
   }
   }
-  
+
   .menucontent {
     float: left;
     position: relative;

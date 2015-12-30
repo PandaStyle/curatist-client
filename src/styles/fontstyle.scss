@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('../fonts/icomoon.eot?w5fwm3');
-    src:    url('../fonts/icomoon.eot?w5fwm3#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?w5fwm3') format('truetype'),
-    url('../fonts/icomoon.woff?w5fwm3') format('woff'),
-    url('../fonts/icomoon.svg?w5fwm3#icomoon') format('svg');
+    src:    url('../fonts/icomoon.eot?d8027p');
+    src:    url('../fonts/icomoon.eot?d8027p#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?d8027p') format('truetype'),
+    url('../fonts/icomoon.woff?d8027p') format('woff'),
+    url('../fonts/icomoon.svg?d8027p#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -32,6 +32,9 @@
 }
 .icon-dial-pad:before {
     content: "\e900";
+}
+.icon-grid:before {
+    content: "\e90b";
 }
 .icon-mail:before {
     content: "\e90a";

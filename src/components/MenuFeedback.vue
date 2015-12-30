@@ -12,8 +12,6 @@
         name: 'MenuFeedback',
 
         ready () {
-
-            //doorbell
             window.doorbellOptions = {
                 hideButton: true,
                 container: document.getElementById('feedback-container'),
@@ -22,7 +20,6 @@
             (function(d, t) {
                 var g = d.createElement(t);g.id = 'doorbellScript';g.type = 'text/javascript';g.async = true;g.src = 'https://embed.doorbell.io/button/2825?t='+(new Date().getTime());(d.getElementsByTagName('head')[0]||d.getElementsByTagName('body')[0]).appendChild(g);
             }(document, 'script'));
-
         }
     }
 </script>

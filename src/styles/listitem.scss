@@ -43,27 +43,48 @@
       .diff {
         color: $summary-color;
       }
+
+      .share {
+        @include defaulttransition();
+
+        display: inline-block;
+        color: white;
+        font-size: 18px;
+        opacity: 0;
+
+        &:hover {
+          color: $red !important;
+          cursor: pointer;
+        }
+
+        &.active {
+          color: $red !important;
+        }
+      }
+
+      .share.general {
+        margin-left: 15px;
+        margin-right: 5px;
+      }
+
+      .share.twitter {
+        margin: 0 3px;
+      },
+    .share.twitter:hover {
+      color: $twitter-color !important;
+    }
+      .share.facebook {
+        margin: 0 3px;
+      },
+    .share.facebook:hover {
+      color: $facebook-color !important;
+    }
     }
 
 
-  &:hover {
-    cursor: pointer;
+
+  &:hover .meta .share  {
+    opacity: 1;
   }
 
-
-  &:hover img {
-    -webkit-transform: scale(1.07);
-    -moz-transform: scale(1.07);
-    -ms-transform: scale(1.07);
-    -o-transform: scale(1.07);
-    transform: scale(1.07);
-  }
-  /*
-        &:hover .overlay .lay {
-          opacity: 0.8;
-
-          -webkit-transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-          transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-        }
-  */
 }
