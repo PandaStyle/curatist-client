@@ -15,6 +15,13 @@
     min-height: 200px;
   }
 
+  a.overlay {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 40px);
+  }
+
   .tile-image {
     overflow: hidden;
   }
@@ -121,6 +128,12 @@
       },
       .share.facebook:hover {
         color: $facebook-color !important;
+      },
+      .share.linkedin {
+        margin: 0 5px;
+      },
+      .share.linkedin:hover {
+        color: $linkedin-color !important;
       }
     }
   }
@@ -130,6 +143,11 @@
 
     border: 1px solid $summary-color;
     border-radius: 1px;
+    
+    .summary {
+      @include defaulttransition();
+      color: #CCC;
+    }
   }
 
 
@@ -149,4 +167,9 @@
   &:hover header .meta .share  {
     opacity: 1;
   }
+}
+
+.light .tile:hover .summary {
+  @include defaulttransition();
+  color: #444;
 }

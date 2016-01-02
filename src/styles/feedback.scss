@@ -28,6 +28,7 @@
     letter-spacing: 5px;
 
     &:hover {
+      @include defaulttransition();
       background-color: #8FCE94;
     }
   }

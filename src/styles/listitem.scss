@@ -8,7 +8,15 @@
   text-align: left;
   margin: 30px 20px 30px 13px;
 
-    .title {
+  a.overlay {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 30px);
+  }
+
+
+  .title {
       letter-spacing: 0px;
       font-family: 'Playfair Display', serif;
       font-weight: 900;
@@ -79,13 +87,25 @@
       },
     .share.facebook:hover {
       color: $facebook-color !important;
-    }
+    },
+    .share.linkedin {
+      margin: 0 5px;
+    },
+    .share.linkedin:hover {
+      color: $linkedin-color !important;
     }
 
-
+    }
 
   &:hover .meta .share  {
     opacity: 1;
+  }
+
+  &:hover {
+    .summary {
+      @include defaulttransition();
+      color: #CCC;
+    }
   }
 
 }

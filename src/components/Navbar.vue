@@ -1,7 +1,7 @@
 <template>
     <div class="navbar">
         <div class="logo">
-            <img src="../img/LOGO-NEW-LIGHT.png" alt=""/>
+            <a class="logo-img" href="/"></a>
         </div>
         <ul class="menu">
             <li @click="toggleView" class="view-switcher" v-bind:class="getViewSwitcherClass()"></li>
@@ -10,6 +10,7 @@
             <li><a class="navlink"  v-link="getPath ('/feed/technology')">Tech</a></li>
             <li><a class="navlink" v-link="getPath ('/feed/business')">Business</a></li>
             <li class="link-border-left"><a class="navlink" v-link="{ path: '/feed/inspiration/tile' }">Inspiration</a></li>
+            <li class="theme-switcher" @click="toggleTheme" ></li>
         </ul>
         <div class="hamburger button_container"  v-bind:class="{active: isMenuActive}" id="toggle" @click="toggleMenu">
             <span class="top"></span>
@@ -24,17 +25,12 @@
                 <a data-menuview="MenuWhat" class="bordered" v-bind:class="{active: activeMenuView=='MenuWhat'}" href="#" @click="toggleMenuView">What?</a>
             </li>
             <li>
-                <a data-menuview="MenuLayout" class="bordered" v-bind:class="{active: activeMenuView=='MenuLayout'}" href="#" @click="toggleMenuView">Theme</a>
-            </li>
-            <li>
-                <a data-menuview="MenuFeedback" class="bordered" v-bind:class="{active: activeMenuView=='MenuFeedback'}" href="#" @click="toggleMenuView">Feedback</a>
-            </li>
-            <li>
                 <a data-menuview="MenuAbout"  data-menuview="layouts"class="bordered" v-bind:class="{active: activeMenuView=='MenuAbout'}" href="#" @click="toggleMenuView">Who?</a>
             </li>
             <li>
-                <a data-menuview="MenuSocial" data-menuview="layouts" class="bordered" v-bind:class="{active: activeMenuView=='MenuSocial'}" href="#" @click="toggleMenuView">Socialize</a>
+                <a data-menuview="MenuFeedback" class="bordered" v-bind:class="{active: activeMenuView=='MenuFeedback'}" href="#" @click="toggleMenuView">Thoughts?</a>
             </li>
+
         </ul>
         <div class="menucontent">
             <component :is="activeMenuView" transition-mode="out-in" transition="expand" keep-alive>
@@ -48,10 +44,8 @@
 <script type="text/babel">
     import $ from 'jquery';
     import MenuWhat from './MenuWhat.vue';
-    import MenuLayout from './MenuLayout.vue';
     import MenuFeedback from './MenuFeedback.vue';
     import MenuAbout from './MenuAbout.vue';
-    import MenuSocial from './MenuSocial.vue';
 
     export default {
 
@@ -61,18 +55,24 @@
             return {
                 view: "",
                 isMenuActive: false,
-                activeMenuView: ""
+                activeMenuView: "",
+                theme: "",
             }
         },
         components: {
             MenuWhat,
-            MenuLayout,
             MenuFeedback,
-            MenuAbout,
-            MenuSocial
+            MenuAbout
+        },
+
+        watch: {
+            'theme': function (val) {
+                $('body').attr("class", val);
+            }
         },
 
         ready () {
+            this.theme = "dark";
             this.view = this.$route.path.substr(this.$route.path.lastIndexOf('/') + 1);
         },
 
@@ -102,8 +102,14 @@
             },
             getViewSwitcherClass () {
                 return this.view == "tile" ? "icon-text" : "icon-grid";
+            },
+            toggleTheme () {
+                if(this.theme == "dark"){
+                    this.theme = "light"
+                } else {
+                    this.theme = "dark"
+                }
             }
-
         }
 
     }

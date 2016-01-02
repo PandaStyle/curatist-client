@@ -1,0 +1,64 @@
+@import "globals";
+
+.menuabout {
+
+  .images {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .images .image {
+    width: 215px;
+    height: 215px;
+    background-image: url("../img/mi1.png");
+    background-size: cover;
+  }
+
+  .image:hover {
+    background-image: url("../img/mi2.png");
+  }
+
+  .person {
+    margin: 20px;
+
+    .name {
+      font-size: 24px;
+    }
+
+    .prof {
+      display: inline-block;
+      font-family: 'Muli', sans-serif;
+      font-size: 16px;
+    }
+
+    .icons {
+      display: inline-block;
+
+
+      .icon {
+        text-decoration: none;
+        cursor: pointer;
+        color: grey;
+      }
+    }
+  }
+
+  .timi .icons {
+    margin-left: 28px;
+
+  }
+
+  .zsolt .icons {
+    margin-left: 59px;
+  }
+
+
+  .icon-twitter:hover {
+    color: $twitter-color !important;
+  }
+
+  .icon-mail:hover {
+    color: $red !important;
+  }
+
+}
