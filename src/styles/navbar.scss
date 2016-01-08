@@ -6,7 +6,6 @@ $button-width: 27px;
 
 .navbar {
   z-index: 1;
-  background: $body-background;
   top: 0;
 
   padding-left: 43px;
@@ -75,27 +74,14 @@ $button-width: 27px;
     &.theme-switcher {
       cursor: pointer;
       position: relative;
-      height: 24px;
-      width: 24px;
-      overflow: hidden;
-      background-color: grey;
+      height: 23px;
+      width: 37px;
       float: right;
       margin-right:15px;
+      background-image: url("../img/BWicon.png");
+      background-size: contain;
     }
 
-    &.theme-switcher:before {
-      content: '';
-      position: absolute;
-      left: 20%;
-      width: 100%;
-      height: 200%;
-      background-color: rgb(255, 255, 255); /* fallback */
-      background-color: rgba(255, 255, 255, 0.5);
-      top: 0;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      transform: rotate(45deg);
-    }
   }
 
   .hamburger {

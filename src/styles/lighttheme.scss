@@ -2,11 +2,7 @@ $bg-color: #F1F1F1;
 $black: #444;
 
 .light {
-  background-color: $bg-color;
-
-  .navbar {
-    background-color: $bg-color;
-  }
+  background-image: url("../img/Curatist-LIGHT-background.png");
 
   .feed-item {
     .title{
