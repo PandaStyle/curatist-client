@@ -2,7 +2,7 @@
     <div class="menuabout">
         <h2>Who are we?</h2>
         <p>
-            We are a coder-designer couple who had a problem: the curious architect girl loved to see all the news but hated having to click around to countless websites; and the smart software guy knew there is a better way.
+            We are a coder-designer couple who had a problem: the curious architect girl loved to see all the news but got tired having to click around to countless websites; and the smart software guy knew there is a better way.
             <br/>   <br/>
             We created the Curatist to be smart, beautiful and useful.<br/>
             It's a solution we love and hope you’ll love it too.<br/>   <br/>
