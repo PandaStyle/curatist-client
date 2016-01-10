@@ -4,7 +4,7 @@
     <div class="search-view grid">
 
 
-        <h2>Better matches, less time via Smart Search.</h2>
+        <h2>Get relevant results. Forget the hassle. Smart Search.</h2>
 
         <div class="promo-text">
             <p>
@@ -15,13 +15,6 @@
                 The Curatist makes your wish come true: smart search function is coming soon.
             </p>
         </div>
-
-
-
-
-
-
-
 
 
     </div>
