@@ -10,6 +10,8 @@ import ListView from './components/ListView.vue'
 import FeedItem from './components/FeedItem.vue'
 import InspItem from './components/InspItem.vue'
 
+import SearchView from './components/SearchView.vue'
+
 import $ from 'jquery';
 import NProgress from '../node_modules/nprogress/nprogress.js';
 import imagesLoaded from '../node_modules/imagesloaded/imagesloaded.js';
@@ -47,6 +49,10 @@ router.map({
               component: ListView
           }
       }
+  },
+
+  '/search': {
+    component: SearchView
   }
 });
 

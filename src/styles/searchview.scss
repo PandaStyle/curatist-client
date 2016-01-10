@@ -1,0 +1,16 @@
+@import "globals";
+
+.search-view {
+  margin-top: 60px;
+
+  color: #D8D8D8;
+  text-align: center;
+
+  .promo-text{
+    margin-top: 40px;
+  }
+}
+
+.light .search-view {
+  color: #444;
+}

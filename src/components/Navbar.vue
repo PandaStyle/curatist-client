@@ -10,6 +10,10 @@
             <li><a class="navlink"  v-link="getPath ('/feed/technology')">Tech</a></li>
             <li><a class="navlink" v-link="getPath ('/feed/business')">Business</a></li>
             <li class="link-border-left"><a class="navlink" v-link="{ path: '/feed/inspiration/tile' }">Inspiration</a></li>
+            <li class="link-border-left">
+                <a class="navlink" v-link="{ path: '/search' }">Search</a>
+                <span class="soon">SOON</span>
+            </li>
             <li class="theme-switcher" @click="toggleTheme" ></li>
         </ul>
         <div class="hamburger button_container"  v-bind:class="{active: isMenuActive}" id="toggle" @click="toggleMenu">

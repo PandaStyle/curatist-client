@@ -46,6 +46,7 @@ $button-width: 27px;
 
 
   li {
+    position: relative;
     display: inline-block;
 
     a {
@@ -72,16 +73,26 @@ $button-width: 27px;
     }
 
     &.theme-switcher {
+      margin-top: 3px;
       cursor: pointer;
       position: relative;
       height: 23px;
-      width: 37px;
+      width: 30px;
       float: right;
       margin-right:15px;
       background-image: url("../img/BWicon.png");
       background-size: contain;
+      background-repeat: no-repeat;
     }
+  }
 
+
+  .soon {
+    font-size: 10px;
+    color: $red;
+    left: 85px;
+    position: absolute;
+    top: -8px;
   }
 
   .hamburger {
