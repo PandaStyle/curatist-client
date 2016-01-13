@@ -51,7 +51,7 @@
 
         ready () {
             $('.image').mouseenter(function(){
-                $('.timi .prof').text("Raindeer");
+                $('.timi .prof').text("Reindeer");
                 $('.zsolt .prof').text("Boss");
             })
 
