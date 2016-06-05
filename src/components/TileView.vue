@@ -30,7 +30,7 @@
     import imagesLoaded from 'imagesloaded';
 
     const API_URL_FEED = 'http://www.curatist.co:8081/feed/river/';
-    const API_URL_INSP = 'http://www.curatist.co:8081/getposts/';
+    const API_URL_INSP = 'http://localhost:8081/insta/';
 
     export default {
         name: 'TileView',
@@ -60,7 +60,7 @@
 
 
                 if(this.isInspiration){
-                    this.apiURL = API_URL_INSP + '0/40';
+                    this.apiURL = API_URL_INSP + '0/20';
                 }
 
                 NProgress.start();

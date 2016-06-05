@@ -11,7 +11,7 @@ body{
   background-color: $body-background;
   font-family: 'Lato', sans-serif;
   font-size: 16px;
-  background-image: url("../img/Curatist-background.png");
+  background-image: radial-gradient(circle at 50% 100%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.81) 80%), url("../img/Curatist-background.png");
   background-attachment: fixed;
   background-size: cover;
 }

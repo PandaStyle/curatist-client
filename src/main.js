@@ -7,6 +7,7 @@ import Navbar from './components/Navbar.vue'
 import FeedView from './components/FeedView.vue'
 import TileView from './components/TileView.vue'
 import ListView from './components/ListView.vue'
+import Instagram from './components/Instagram.vue'
 import FeedItem from './components/FeedItem.vue'
 import InspItem from './components/InspItem.vue'
 
@@ -17,15 +18,15 @@ import NProgress from '../node_modules/nprogress/nprogress.js';
 import imagesLoaded from '../node_modules/imagesloaded/imagesloaded.js';
 
 
-Vue.directive('img', function(url) {
+Vue.directive('img', function (url) {
 
-  var img = new Image();
-  img.src = url;
+    var img = new Image();
+    img.src = url;
 
-  img.onload = function() {
-    this.el.src = url;
-    $(this.el).addClass("loaded")
-  }.bind(this);
+    img.onload = function () {
+        this.el.src = url;
+        $(this.el).addClass("loaded")
+    }.bind(this);
 });
 
 
@@ -34,30 +35,34 @@ Vue.use(VueResource);
 
 // routing
 var router = new Router({
-  transitionOnLoad: true,
-  hashbang: false
+    transitionOnLoad: true,
+    hashbang: false
 });
 
 router.map({
-  '/feed/:type': {
-    component: FeedView,
-      subRoutes: {
-          '/tile': {
-              component: TileView
-          },
-          '/list': {
-              component: ListView
-          }
-      }
-  },
+    '/feed/:type': {
+        component: FeedView,
+        subRoutes: {
+            '/tile': {
+                component: TileView
+            },
+            '/list': {
+                component: ListView
+            }
+        }
+    },
 
-  '/search': {
-    component: SearchView
-  }
+    '/instagram': {
+        component: Instagram
+    },
+
+    '/search': {
+        component: SearchView
+    }
 });
 
 router.redirect({
-  '*': '/feed/all/tile'
+    '*': '/feed/all/tile'
 });
 
 router.start(App, '#app');

@@ -58,7 +58,7 @@
       text-decoration: none;
       letter-spacing: 0px;
       font-family: 'Playfair Display', serif;
-      font-weight: 900;
+      font-weight: 700;
       font-size: 24px;
       margin-bottom: 15px;
       color: #F1F1F1;
@@ -74,10 +74,13 @@
       line-height: 20px;
       margin-bottom: 20px;
       font-size: 15px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
       color: $summary-color;
     }
 
     .meta {
+      margin: 0 !important;
       font-size: 14px;
 
       .host {
@@ -141,9 +144,10 @@
   &:hover {
     @include defaulttransition();
 
-    border: 1px solid $summary-color;
     border-radius: 1px;
-    
+    background-color: rgba(255,255,2555, 0.1);
+
+
     .summary {
       @include defaulttransition();
       color: #CCC;
