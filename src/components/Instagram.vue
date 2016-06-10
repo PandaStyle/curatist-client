@@ -114,3 +114,9 @@
         }
     }
 </script>
+
+<style>
+    .tile:hover{
+        cursor: pointer;
+    }
+</style>
