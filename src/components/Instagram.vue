@@ -14,7 +14,7 @@
 
 
     var Config = {
-        API_URL : process.env.NODE_ENV === 'production' ?  "www.curatist.co:8081/" : "http://localhost:8081/"
+        API_URL : process.env.NODE_ENV === 'production' ?  "http://www.curatist.co:8081/" : "http://www.curatist.co:8081/"
     }
 
    export default {
