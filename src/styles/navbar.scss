@@ -22,7 +22,7 @@ $button-width: 27px;
     height: 100px;
     width: 220px;
     background-size: contain;
-    background-image: url("../img/curatist-logo-white.png");
+    background-image: url("../img/Curatist-Logo-Web-White.png");
   }
 
   ul.menu {
@@ -51,17 +51,21 @@ $button-width: 27px;
 
     a {
       font-size: 18px;
-      font-family: 'Playfair Display', serif;
+      font-family: Lato, sans-serif;
+      font-weight: 300;
       padding: 15px 20px;
       text-decoration: none;
       color: $summary-color;
     }
     a:hover{
       @include defaulttransition();
-      color: $dark-grey;
+      color: #fff;
     }
     a.v-link-active{
       color: $red;
+    }
+    a.bold {
+      font-weight: 400;
     }
     &.link-border-right {
       padding-right: 10px;
@@ -284,7 +288,7 @@ menu {
 
 
 .dark .logo .logo-img {
-  background-image: url("../img/curatist-logo-white.png");
+  background-image: url("../img/Curatist-Logo-Web-White.png");
 }
 
 .light .logo .logo-img {

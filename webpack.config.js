@@ -2,12 +2,15 @@ var vue = require('vue-loader')
 var webpack = require('webpack')
 var imports = require('imports-loader')
 
+//TODO: this shouldn't go out to the internet for the request
+const HOST = process.env.NODE_ENV === 'production' ? "http://www.curatist.co/" : "http://localhost:8080/";
+
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: './static',
-    publicPath: '/static/',
+    publicPath: HOST + 'static/',
     filename: 'build.js'
   },
   module: {
