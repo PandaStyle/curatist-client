@@ -4,18 +4,7 @@
     <div class="search-view grid">
 
 
-        <h2>Get relevant results. Forget the hassle. Smart Search.</h2>
-
-        <div class="promo-text">
-            <p>
-                Have you ever had to scroll through a bunch of useless links when you searched for something specific?
-                <br/><br/>
-                Have you ever wished Google image search would provide quality images?
-                <br/><br/>
-                The Curatist makes your wish come true: smart search function is coming soon.
-            </p>
-        </div>
-
+        <span class="whatareyoulooking">What are you looking for?</span>
         <div id="test"></div>
 
     </div>
@@ -76,6 +65,11 @@
 </script>
 
 <style lang="sass">
+
+    .whatareyoulooking {
+        text-align: left;
+    }
+
     .gsc-control-cse {
         background-color: transparent !important;
         border: none !important;
