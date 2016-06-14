@@ -21,6 +21,14 @@ server.route({
     }
 });
 
+server.route({
+    method: 'GET',
+    path: '/add',
+    handler: function (request, reply) {
+        reply.file('admin/lite/index.html');
+    }
+});
+
 server.start(function (err) {
 
     if (err) {

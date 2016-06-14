@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new curatum</title>
+    <link rel="stylesheet" href="/admin/lite/add.css">
+</head>
+<body>
+
+<div class="container" >
+    <h1>Curatist Lite Admin</h1>
+    <h2>Add a new building</h2>
+    <form class="form" action="http://www.curatist.co:8081/building" method="post">
+
+        <fieldset class="form-fieldset ui-input __first">
+            <input type="text" name="link" id="link" tabindex="1" required/>
+            <label for="link">
+                <span data-text="link url">link url</span>
+            </label>
+        </fieldset>
+
+        <fieldset class="form-fieldset ui-input __second">
+            <input type="text" id="img" name="img" tabindex="2" required/>
+            <label for="img">
+                <span data-text="Image url">Image url</span>
+            </label>
+        </fieldset>
+
+        <fieldset class="form-fieldset ui-input __third">
+            <input type="text" id="title" name="title" tabindex="3"  placeholder="eg. nice concrete building" required/>
+            <label for="title">
+                <span data-text="title">title</span>
+            </label>
+        </fieldset>
+
+        <fieldset class="form-fieldset ui-input __fourth">
+            <input type="text" id="source" name="source" tabindex="4" placeholder="eg. ArchDaily" required/>
+            <label for="source">
+                <span data-text="source name">source name</span>
+            </label>
+        </fieldset>
+
+        <div class="form-footer">
+            <input type="submit" tabindex="5" class="btn" value="Add" />
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
