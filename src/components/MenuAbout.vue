@@ -53,11 +53,13 @@
             $('.image').mouseenter(function(){
                 $('.timi .prof').text("Reindeer");
                 $('.zsolt .prof').text("Boss");
+                $('.contacts').addClass("hovered");
             })
 
             $('.image').mouseleave(function(){
                 $('.timi .prof').text("Designer");
                 $('.zsolt .prof').text("Coder");
+                $('.contacts').removeClass("hovered");
             })
         }
     }

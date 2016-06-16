@@ -3,27 +3,36 @@
         <div class="logo">
             <a class="logo-img" href="/"></a>
         </div>
-        <ul class="menu">
-            <li @click="toggleView" class="view-switcher" v-bind:class="getViewSwitcherClass()"></li>
-            <li class="link-border-right"><a class="navlink bold" v-link="getPath ('/feed/all')">Feed</a></li>
-            <li><a class="navlink" v-link="getPath ('/feed/design')">Design</a></li>
-            <li><a class="navlink"  v-link="getPath ('/feed/technology')">Tech</a></li>
-            <li><a class="navlink" v-link="getPath ('/feed/business')">Business</a></li>
-            <li class="link-border-left"><a class="navlink bold" v-link="{ path: '/instagram' }">Inspiration</a></li>
-            <li class="link-border-left">
-                <a class="navlink bold" v-link="{ path: '/search' }">Search</a>
-            </li>
-            <li class="theme-switcher" @click="toggleTheme" ></li>
-        </ul>
+        <div class="menu-holder">
+            <ul class="menu">
+                <!--<li @click="toggleView" class="view-switcher" v-bind:class="getViewSwitcherClass()"></li>-->
+                <li class="link-border-right"><a class="navlink bold" v-link="getPath ('/feed/all')">Feed</a></li>
+                <li><a class="navlink" v-link="getPath ('/feed/design')">Design</a></li>
+                <li><a class="navlink"  v-link="getPath ('/feed/technology')">Tech</a></li>
+                <li><a class="navlink" v-link="getPath ('/feed/business')">Business</a></li>
+                <li class="link-border-left"><a class="navlink bold" v-link="{ path: '/instagram' }">Inspiration</a></li>
+                <li class="link-border-left">
+                    <a class="navlink bold" v-link="{ path: '/search' }">Search</a>
+                </li>
+                <!--<li class="theme-switcher" @click="toggleTheme" ></li>-->
+            </ul>
+        </div>
         <div class="hamburger button_container"  v-bind:class="{active: isMenuActive}" id="toggle" @click="toggleMenu">
             <span class="top"></span>
             <span class="middle"></span>
             <span class="bottom"></span>
         </div>
+        <div class="small-logo">
+            <a href="/"></a>
+        </div>
     </div>
 
     <menu v-bind:class="{open: isMenuActive}">
+        
         <ul class="menu-list" v-bind:class="{border: activeMenuView}">
+            <li>
+                <a data-menuview="MenuSettings" class="bordered" v-bind:class="{active: activeMenuView=='MenuSettings'}" href="#" @click="toggleMenuView">Settings</a>
+            </li>
             <li>
                 <a data-menuview="MenuWhat" class="bordered" v-bind:class="{active: activeMenuView=='MenuWhat'}" href="#" @click="toggleMenuView">What?</a>
             </li>
@@ -49,6 +58,7 @@
     import MenuWhat from './MenuWhat.vue';
     import MenuFeedback from './MenuFeedback.vue';
     import MenuAbout from './MenuAbout.vue';
+    import MenuSettings from './MenuSettings.vue';
 
     export default {
 
@@ -65,18 +75,26 @@
         components: {
             MenuWhat,
             MenuFeedback,
-            MenuAbout
+            MenuAbout,
+            MenuSettings
         },
 
         watch: {
             'theme': function (val) {
                 $('body').attr("class", val);
+                localStorage.setItem('curatist_theme', val)
+            },
+
+            'view': function (val) {
+                localStorage.setItem('curatist_view', val)
             }
         },
 
         ready () {
-            this.theme = "dark";
+            this.theme = localStorage.getItem('curatist_theme') ? localStorage.getItem('curatist_theme') : 'dark'; 
             this.view = this.$route.path.substr(this.$route.path.lastIndexOf('/') + 1);
+
+            this.initStickyNav();
         },
 
         methods: {
@@ -86,13 +104,13 @@
             toggleMenuView (a) {
                 this.activeMenuView = a.currentTarget.attributes[0].value;
             },
-            toggleView () {
-                    if(this.$route.params.type == "inspiration"){
-                        return;
-                    }
-                    var otherview = this.view == "tile" ? "list" : "tile";
-                    this.view = otherview;
-                    this.$route.router.go(otherview);
+            toggleView (v) {
+                if(this.$route.params.type == "inspiration"){
+                    return;
+                }
+              
+                this.view = v;
+                this.$route.router.go(v);
             },
             getView () {
                 var p = this.$route.path;
@@ -106,12 +124,17 @@
             getViewSwitcherClass () {
                 return this.view == "tile" ? "icon-text" : "icon-grid";
             },
-            toggleTheme () {
-                if(this.theme == "dark"){
-                    this.theme = "light"
-                } else {
-                    this.theme = "dark"
-                }
+            toggleTheme (t) {
+                this.theme = t;
+            },
+
+            initStickyNav () {
+                $(window).bind('scroll', function() {
+
+                    let pos = 125;
+
+                    $(this).scrollTop() > pos ? $('body').addClass('sticky') : $('body').removeClass('sticky')
+                });
             }
         }
 

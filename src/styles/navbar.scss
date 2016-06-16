@@ -6,10 +6,7 @@ $button-width: 27px;
 
 .navbar {
   z-index: 1;
-  top: 0;
-
-  padding-left: 43px;
-  padding-right: 50px;
+  margin-top: 25px;
 
   .logo {
     float: left;
@@ -18,17 +15,38 @@ $button-width: 27px;
 
   .logo .logo-img{
     display: block;
-    margin: 0 auto 10px;
+    margin: 0 auto;
     height: 100px;
     width: 220px;
     background-size: contain;
     background-image: url("../img/Curatist-Logo-Web-White.png");
   }
 
+  .menu-holder {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    z-index: 20;
+  }
+
+  .small-logo a{
+    float: left;
+    display: inline-block;
+    top: 8px;
+    width: 80px;
+    left: 80px;
+    height: 54px;
+
+    position: fixed;
+    opacity: 0;
+    background: url("../img/300px_glasses_white.png");
+    background-size: contain;
+  }
+
   ul.menu {
     text-align: center;
-    padding-top: 3px;
-    padding-left: 17px;
+    margin: 20px;
 
     .view-switcher{
         float: left;
@@ -112,6 +130,7 @@ $button-width: 27px;
     z-index: 1000;
 
   }
+
   .button_container {
 
     height: 27px;
@@ -215,37 +234,6 @@ menu {
       }
 
 
-      .bordered {
-        @include defaulttransition();
-        position: relative;
-
-        &:after {
-          height: 3px;
-          width: 0;
-          display: block;
-          background: #17191c;
-          content: "";
-          position: absolute;
-          left: 0;
-          bottom: -3px;
-        }
-
-        &:hover:after {
-          @include defaulttransition();
-          width: 100%;
-          background: $dark-grey;
-        }
-
-        &.active:after {
-          width: 100%;
-          background: $dark-grey;
-        }
-        &.active {
-          color: $dark-grey;
-        }
-
-      }
-
       .suggest {
         background: none;
         border: none;
@@ -283,6 +271,37 @@ menu {
       color: $dark-grey;
     }
   }
+
+  .bordered {
+    @include defaulttransition();
+    position: relative;
+
+    &:after {
+      height: 3px;
+      width: 0;
+      display: block;
+      background: #17191c;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+    }
+
+    &:hover:after {
+      @include defaulttransition();
+      width: 100%;
+      background: $dark-grey;
+    }
+
+    &.active:after {
+      width: 100%;
+      background: $dark-grey;
+    }
+    &.active {
+      color: $dark-grey;
+    }
+
+  }
 }
 
 
@@ -293,4 +312,28 @@ menu {
 
 .light .logo .logo-img {
   background-image: url("../img/curatist-logo-black.png");
+}
+
+.sticky .menu-holder{
+  position: fixed;
+  top: 0; left: 0;
+  background-color: black;
+  z-index: 20;
+  border-bottom: 2px solid $red;
+}
+
+.sticky .logo {
+  opacity: 0;
+}
+
+.sticky .small-logo a{
+  opacity: 1;
+  z-index: 20;
+}
+
+
+
+.sticky .hamburger {
+  position: fixed;
+  top: -7px;
 }

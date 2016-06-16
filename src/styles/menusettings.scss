@@ -1,0 +1,41 @@
+@import "globals";
+
+.menusettings {
+
+  width: 300px;
+  text-align: center;
+
+  .section {
+    margin: 50px 0;
+
+    .title {
+      font-style: italic;
+      font-size: 20px;
+    }
+
+    .option {
+      display: inline-block;
+      text-align: center;
+      margin: 30px;
+      font-size: 24px;
+      color: $grey;
+
+      &.active {
+        color: $dark-grey;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: $dark-grey;
+      }
+
+      &.bordered:after {
+        height: 2px;
+      }
+
+    }
+
+  }
+
+
+}
