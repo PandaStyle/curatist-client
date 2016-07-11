@@ -4,7 +4,7 @@
                 class="feeditem"
                 v-for="item in items"
                 :item="item"
-                track-by="id"
+                track-by="_id"
                 transition="expand">
         </feed-item>
     </div>
@@ -29,8 +29,10 @@
 
     import imagesLoaded from 'imagesloaded';
 
-    const API_URL_FEED = 'http://www.curatist.co:8081/feed/river/';
+    const API_URL_FEED = 'http://www.curatist.co:8081/feed/';
     const API_URL_INSP = 'http://localhost:8081/insta/';
+
+    const FEED_COUNT = 50;
 
     export default {
         name: 'TileView',
@@ -55,7 +57,7 @@
                         type =  transition.to.params.type,
                         self = this;
 
-                this.apiURL = API_URL_FEED + type;
+                this.apiURL = API_URL_FEED + type + '/' + FEED_COUNT;
                 this.isInspiration = type == "inspiration";
 
 
@@ -67,7 +69,7 @@
 
                 this.$http.get(this.apiURL, function (results, status, request) {
 
-                    transition.next({items: this.isInspiration ? results : results.res});
+                    transition.next({items: this.isInspiration ? results : results});
 
                     self.$nextTick(function () {
                         if(!self.salvattoreInitialized){
