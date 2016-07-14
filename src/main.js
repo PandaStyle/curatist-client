@@ -65,6 +65,10 @@ router.redirect({
     '*': '/feed/all/tile'
 });
 
+router.afterEach( transition => {
+  amplitude.getInstance().logEvent('pageload ' +  transition.to.path);
+})
+
 router.start(App, '#app');
 
 

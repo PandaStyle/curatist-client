@@ -1,6 +1,6 @@
 <template>
   <div class="tile feed-item square">
-      <a class="overlay" href="{{item.link}}" target="_blank"></a>
+      <a class="overlay"  href="{{item.link}}" target="_blank" ></a>
       <div class="tile-image"><img   v-img="item.image" alt=""/></div>
       <header>
         <a class="title" href="{{item.link}}" target="_blank">{{item.title}}</a>
@@ -35,6 +35,11 @@
     methods: {
       toggleShare () {
         this.isShareActive = !this.isShareActive;
+      },
+
+
+      trackHover () {
+        amplitude.getInstance().logEvent('item hovered' + item.title, {item: item});
       }
     }
 
