@@ -4,7 +4,7 @@
                 class="listitem"
                 v-for="item in items"
                 :item="item"
-                track-by="id"
+                track-by="_id"
                 transition="expand">
         </list-item>
     </div>
@@ -17,8 +17,10 @@
 
     import imagesLoaded from 'imagesloaded';
 
-    const API_URL_FEED = 'http://www.curatist.co:8081/feed/river/';
+    const API_URL_FEED = 'http://www.curatist.co:8081/feed/';
     const API_URL_INSP = 'http://www.curatist.co:8081/getposts/';
+
+    const FEED_COUNT = 50;
 
     export default {
         name: 'ListView',
@@ -39,7 +41,7 @@
                 let
                         type =  transition.to.params.type;
 
-                this.apiURL = API_URL_FEED + type;
+                this.apiURL = API_URL_FEED + type + '/' + FEED_COUNT;
                 this.isInspiration = type == "inspiration";
 
                 if(this.isInspiration){
@@ -49,7 +51,7 @@
                 NProgress.start();
                 this.$http.get(this.apiURL, function (results, status, request) {
 
-                    transition.next({items: this.isInspiration ? results : results.res});
+                    transition.next({items: this.isInspiration ? results : results});
 
                     NProgress.done();
 
@@ -63,6 +65,9 @@
 </script>
 
 <style>
+
+
+
     /* always present */
     .expand-transition {
         transition: opacity .3s ease;

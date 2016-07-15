@@ -41,23 +41,6 @@
     }
 </script>
 
-<style lang="sass">
-    .tile {
-        .blogname {
-            display: block;
-            position: absolute;
-            padding: 30px;
-            text-decoration: none !important;
-            color: beige;
-            bottom: 0;
-            opacity: 0;
-            z-index: 1;
-            font-weight: bold;
-            font-size: 22px;
-        }
-
-        &:hover .blogname{
-             opacity: 1;
-        }
-    }
+<style lang="sass" scoped>
+    @import "../styles/inspitem.scss";
 </style>

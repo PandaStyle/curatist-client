@@ -2,18 +2,52 @@ $bg-color: #F1F1F1;
 $black: #444;
 
 .light {
-  background-image: url("../img/Curatist-LIGHT-background.png");
+  background-image: none;
+  background-color: white;
+
+  &.sticky .menu-holder {
+    background-color: white !important;
+  }
+
+  .navbar {
+    .navlink:hover {
+      color: $black !important;
+    }
+  }
+  
+  .small-logo a{
+    background: url("../img/curatist-logo-black.png") !important;
+    background-size: contain !important;
+  }
 
   .feed-item {
-    .title{
+    .title {
+
       color: $black;
     }
   }
   .list-item {
-    .title{
-      color: $black;
+    .title {
+      @include defaulttransition();
+
+      color: $black !important;
+    }
+
+    &:hover {
+
+      cursor: pointer;
+
+      .title {
+        color: $red !important;
+      }
+
+      .summary {
+        color: $summary-color !important;
+      }
     }
   }
+
+
 
   .share {
     color: $black !important;

@@ -3,10 +3,26 @@
 .list-item {
   @include defaulttransition();
 
-  display: block;
+  width: 100%;
+  display: flex;
   position: relative;
   text-align: left;
-  margin: 30px 20px 30px 13px;
+  margin: 30px 20px 80px 13px;
+
+  .image {
+
+    margin-right: 40px;
+    margin-top: 5px;
+
+    img {
+      width: 200px;
+    }
+  }
+
+  .article {
+    max-width: 60%;
+    flex: auto;
+  }
 
   a.overlay {
     z-index: 10;
@@ -17,14 +33,16 @@
 
 
   .title {
+      height: 34px;
       letter-spacing: 0px;
       font-family: 'Playfair Display', serif;
       font-weight: 900;
       font-size: 24px;
-      margin-bottom: 15px;
+      margin-bottom: 5px;
       color: #F1F1F1;
       text-decoration: none;
       display: block;
+      overflow: hidden;
     }
 
     .summary {
@@ -38,6 +56,7 @@
 
     .meta {
       font-size: 14px;
+      margin: 0 !important;
 
       .host {
         padding-right: 15px;
