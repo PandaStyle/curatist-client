@@ -1,11 +1,11 @@
 
 .grid {
-  max-width: 1170px;
-  margin: 30px auto;
+  max-width: 1400px;
+  margin: 30px 70px;
 }
 
 .sticky .grid {
-  margin: 110px auto;
+  margin: 110px 70px;
 }
 
 
@@ -43,33 +43,39 @@
 }
 
 /* Configurate salvattore with media queries */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 767px) {
+  .grid,
+  .grid .sticky {
+    margin-left: 30px !important;
+    margin-right: 30px  !important;
+  }
+
+  .sticky .menu-holder {
+    top: auto !important;
+    bottom: 0 !important;
+  }
+
   [data-columns]::before {
     content: '1 .column';
   }
 }
 
-@media screen and (min-width: 700px) and (max-width: 1200px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .grid,
+  .grid .sticky {
+    margin-left: 30px  !important;
+    margin-right: 30px  !important;
+  }
+
   [data-columns]::before {
     content: '2 .column.size-1of2';
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1525px) {
+@media screen and (min-width: 1200px) {
   [data-columns]::before {
     content: '3 .column.size-1of3';
   }
 
 }
 
-@media screen and (min-width: 1526px) and (max-width: 1825px) {
-  [data-columns]::before {
-    content: '4 .column.size-1of4';
-  }
-}
-
-@media screen and (min-width: 1826px)  {
-  [data-columns]::before {
-    content: '5 .column.size-1of5';
-  }
-}
