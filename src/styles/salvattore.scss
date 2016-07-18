@@ -79,3 +79,16 @@
 
 }
 
+
+@media screen and (min-width: 1540px) {
+  .grid {
+    max-width: 1400px;
+    margin: 30px auto;
+  }
+
+  .sticky .grid {
+    margin: 110px auto;
+  }
+
+
+}
