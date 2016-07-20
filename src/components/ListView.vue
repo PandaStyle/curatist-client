@@ -65,7 +65,9 @@
 </script>
 
 <style>
-
+    .list-view.grid {
+        margin: 0 auto;
+    }
 
 
     /* always present */

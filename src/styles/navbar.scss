@@ -68,24 +68,24 @@ $button-width: 27px;
     display: inline-block;
 
     a {
+      letter-spacing: 1px;
       font-size: 16px;
-      font-family: Lato, sans-serif;
+      font-family: $paragraph-font-family;
       font-weight: 300;
       padding: 15px 20px;
       text-decoration: none;
-      color: $summary-color;
+      color: $white;
       text-transform: uppercase;
-      font-weight: 400;
     }
     a:hover{
       @include defaulttransition();
-      color: #fff;
+      color: $red;
     }
     a.v-link-active{
       color: $red;
     }
     a.bold {
-      font-weight: 400;
+      font-weight: 500;
     }
     &.link-border-right {
       padding-right: 10px;
@@ -191,7 +191,7 @@ $button-width: 27px;
 menu {
   @include defaulttransition();
 
-  font-family: 'Playfair Display', serif;
+  font-family: $heading-font-family;
 
   margin: 0;
   opacity: 0;
@@ -313,7 +313,7 @@ menu {
 }
 
 .light .logo .logo-img {
-  background-image: url("../img/curatist-logo-black.png");
+  background-image: url("../img/Curatist-logo-Web-Black.png");
 }
 
 .sticky .menu-holder{

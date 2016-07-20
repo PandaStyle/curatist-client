@@ -5,6 +5,7 @@
             <div class="selection">
                 <span id="grid" class="bordered option" v-bind:class="{active: $parent.view == 'tile'}" @click="$parent.toggleView('tile')">grid</span>
                 <span id="list" class="bordered option" v-bind:class="{active: $parent.view == 'list'}" @click="$parent.toggleView('list')">list</span>
+                <span id="pic" class="bordered option" v-bind:class="{active: $parent.view == 'pic'}" @click="$parent.toggleView('pic')">pic</span>
             </div>
         </div>
 
@@ -26,8 +27,6 @@
 
     export default {
         name: 'MenuSettings'
-
-
 
     }
 </script>

@@ -42,6 +42,9 @@ router.map({
             '/tile': {
                 component: TileView
             },
+            '/pic': {
+                component: TileView
+            },
             '/list': {
                 component: ListView
             }

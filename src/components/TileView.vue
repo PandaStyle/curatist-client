@@ -1,5 +1,5 @@
 <template>
-    <div class="feed-view grid" data-columns v-if="!isInspiration">
+    <div class="feed-view grid" v-bind:class="{pic: isPic}"  data-columns v-if="!isInspiration">
         <feed-item
                 class="feeditem"
                 v-for="item in items"
@@ -47,7 +47,8 @@
                 items: null,
                 apiURL: "",
                 salvattoreInitialized: false,
-                isInspiration: false
+                isInspiration: false,
+                isPic: false
             }
         },
 
@@ -60,6 +61,9 @@
                 this.apiURL = API_URL_FEED + type + '/' + FEED_COUNT;
                 this.isInspiration = type == "inspiration";
 
+                // is pic
+                if(transition.to.path.split('/')[transition.to.path.split('/').length -1] == "pic")
+                    this.isPic  = true;
 
                 if(this.isInspiration){
                     this.apiURL = API_URL_INSP + '0/20';

@@ -1,5 +1,5 @@
 <template>
-  <div class="tile feed-item square">
+  <div class="tile feed-item" v-bind:class="{nopic: !item.image}">
       <a class="overlay"  href="{{item.link}}" target="_blank" ></a>
       <div class="tile-image"><img   v-img="item.image" alt=""/></div>
       <header>

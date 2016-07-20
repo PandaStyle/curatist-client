@@ -106,7 +106,7 @@
         font-weight: bold !important;
         font-size: 20px !important;
         text-decoration: none !important;
-        font-family: 'Playfair Display', serif !important;
+
         font-weight: 700 !important;
         font-size: 24px !important;
 
@@ -119,13 +119,13 @@
     .gs-webResult .gs-snippet, .gs-imageResult .gs-snippet, .gs-fileFormatType {
         padding-top: 5px !important;
         font-size: 15px !important;
-        font-family: Lato,sans-serif !important;
+
         font-weight: 700 !important;
         color: #968f8f !important;
     }
 
     .gsc-url-bottom {
-        font-family: Lato,sans-serif !important;
+
         font-weight: 700 !important;
     }
 

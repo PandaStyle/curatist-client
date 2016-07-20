@@ -82,10 +82,14 @@
         watch: {
             'theme': function (val) {
                 $('body').attr("class", val);
+                this.toggleMenu()
                 localStorage.setItem('curatist_theme', val)
+
+
             },
 
             'view': function (val) {
+                this.toggleMenu()
                 localStorage.setItem('curatist_view', val)
             }
         },

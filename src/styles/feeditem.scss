@@ -27,25 +27,24 @@
   }
 
   img {
-      @include defaulttransition();
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1);
+    @include defaulttransition();
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
 
-      &[src="http://www.engraversnetwork.com/files/placeholder.jpg"] {
-        display: none;
-      }
+    &[src="http://www.engraversnetwork.com/files/placeholder.jpg"] {
+      display: none;
+    }
 
-      opacity:0;
-      border-radius: $border-radius;
-      width: 100%;
+    opacity: 0;
+    border-radius: $border-radius;
+    width: 100%;
   }
   img.loaded {
     opacity: 1;
   }
-
 
   header {
     @include defaulttransition();
@@ -59,24 +58,20 @@
       overflow: hidden;
       text-decoration: none;
       letter-spacing: 0px;
-      font-family: 'Playfair Display', serif;
+      font-family: $heading-font-family;
       font-weight: 700;
       font-size: 24px;
       margin-bottom: 10px;
       color: #F1F1F1;
-
-      &:hover {
-        //text-decoration: underline;
-      }
     }
 
     .summary {
       overflow: hidden;
-      max-height: 60px;
-      line-height: 20px;
-      margin-bottom: 15px;
-      font-size: 15px;
-      font-family: 'Lato', sans-serif;
+      max-height: 63px;
+      line-height: 22px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-family: $paragraph-font-family;
       font-weight: 300;
       color: $summary-color;
     }
@@ -86,7 +81,7 @@
       font-size: 14px;
 
       .host {
-        padding-right: 15px;
+        padding-right: 10px;
         color: $red;
         text-decoration: none;
       }
@@ -124,20 +119,20 @@
 
       .share.twitter {
         margin: 0 5px;
-      },
-      .share.twitter:hover {
+      }
+      .share .twitter:hover {
         color: $twitter-color !important;
       }
       .share.facebook {
         margin: 0 5px;
-      },
-      .share.facebook:hover {
+      }
+      .share .facebook:hover {
         color: $facebook-color !important;
-      },
-      .share.linkedin {
+      }
+      .share .linkedin {
         margin: 0 5px;
-      },
-      .share.linkedin:hover {
+      }
+      .share .linkedin:hover {
         color: $linkedin-color !important;
       }
     }
@@ -147,15 +142,13 @@
     @include defaulttransition();
 
     border-radius: 1px;
-    background-color: rgba(255,255,2555, 0.1);
-
+    background-color: rgba(255, 255, 2555, 0.1);
 
     .summary {
       @include defaulttransition();
       color: #CCC;
     }
   }
-
 
   &:hover img {
     -webkit-transform: scale(1.06);
@@ -170,12 +163,53 @@
     transition-duration: 5s;
   }
 
-  &:hover header .meta .share  {
+  &:hover header .meta .share {
     opacity: 1;
   }
 }
 
+// Light
 .light .tile:hover .summary {
   @include defaulttransition();
-  color: #444;
+  color: $black;
+}
+
+//Pic
+.pic {
+  .tile {
+    header {
+      position: absolute;
+      bottom: 0;
+      opacity: 0;
+      z-index: 10;
+
+      .title {
+        max-height: 64px;
+      }
+
+      .summary {
+        display: none
+      }
+    }
+
+    &:hover {
+      .overlay {
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      header {
+        opacity: 1;
+
+        .title,
+        .diff {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .tile.nopic {
+    display: none;
+  }
 }
