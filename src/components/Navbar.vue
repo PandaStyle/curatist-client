@@ -145,9 +145,9 @@
                 let currentScroll = $(window).scrollTop();
                 if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()){
                     if (currentScroll > this.previousScroll){
-                        setTimeout(this.hideMobileNav, 300);
+                        this.hideMobileNav()
                     } else {
-                        setTimeout(this.showMobileNav, 300);
+                        this.showMobileNav()
                     }
                     this.previousScroll = currentScroll;
                 }
