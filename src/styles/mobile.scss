@@ -18,6 +18,7 @@
   }
 
   .sticky .navbar .menu {
+    padding-left: 0 !important;
     margin-top: 70px !important;
   }
 
@@ -26,4 +27,13 @@
       display: none;
     }
   }
+}
+
+
+@media screen and (max-width: 450px) {
+  .sticky .navbar .menu li a{
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
+
 }
