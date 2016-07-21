@@ -2,7 +2,7 @@
 
 @media screen and (max-width: 767px) {
   .navbar .menu {
-
+    padding-left: 0;
 
     li:nth-child(2),
     li:nth-child(3),
@@ -27,11 +27,20 @@
       display: none;
     }
   }
+
+}
+
+.hamburger {
+  display: none !important;
+}
+
+.sticky .hamburger {
+  display: block !important;
 }
 
 
 @media screen and (max-width: 450px) {
-  .sticky .navbar .menu li a{
+  .navbar .menu li a{
     padding-right: 10px !important;
     padding-left: 10px !important;
   }
