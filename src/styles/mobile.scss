@@ -1,0 +1,29 @@
+@import "globals";
+
+@media screen and (max-width: 767px) {
+  .navbar .menu {
+
+
+    li:nth-child(2),
+    li:nth-child(3),
+    li:nth-child(4) {
+      display: none;
+    }
+
+    li.link-border-right {
+      border-right: none
+    }
+
+
+  }
+
+  .sticky .navbar .menu {
+    margin-top: 70px !important;
+  }
+
+  .sticky .navbar .menu.hidden {
+    li {
+      display: none;
+    }
+  }
+}

@@ -70,6 +70,7 @@
                 isMenuActive: false,
                 activeMenuView: "",
                 theme: "",
+                previousScroll: 0
             }
         },
         components: {
@@ -98,7 +99,7 @@
             this.theme = localStorage.getItem('curatist_theme') ? localStorage.getItem('curatist_theme') : 'dark'; 
             this.view = this.$route.path.substr(this.$route.path.lastIndexOf('/') + 1);
 
-            this.initStickyNav();
+            $(window).bind('scroll', this.scrollHandler)
         },
 
         methods: {
@@ -132,13 +133,32 @@
                 this.theme = t;
             },
 
-            initStickyNav () {
-                $(window).bind('scroll', function() {
+            scrollHandler (e) {
+                let window = e.currentTarget;
 
-                    let pos = 125;
+                /* sticky */
+                let pos = 125;
+                $(window).scrollTop() > pos ? $('body').addClass('sticky') : $('body').removeClass('sticky')
 
-                    $(this).scrollTop() > pos ? $('body').addClass('sticky') : $('body').removeClass('sticky')
-                });
+
+                /* mobile nav */
+                let currentScroll = $(window).scrollTop();
+                if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()){
+                    if (currentScroll > this.previousScroll){
+                        setTimeout(this.hideMobileNav, 300);
+                    } else {
+                        setTimeout(this.showMobileNav, 300);
+                    }
+                    this.previousScroll = currentScroll;
+                }
+            },
+
+            hideMobileNav () {
+                $('.navbar .menu').removeClass("hidden").addClass("hidden");
+            },
+
+            showMobileNav () {
+                $('.navbar .menu').addClass("hidden").removeClass("hidden");
             }
         }
 
