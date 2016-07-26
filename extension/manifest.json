@@ -12,6 +12,6 @@
   "manifest_version": 2,
   "name": "The Curatist",
   "update_url": "https://clients2.google.com/service/update2/crx",
-  "version": "0.9.7",
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://embed.doorbell.io https://d24n15hnbwhuhn.cloudfront.net/libs/ https://www.google-analytics.com/; object-src 'self'"
+  "version": "0.9.8",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://embed.doorbell.io https://d24n15hnbwhuhn.cloudfront.net/libs/ https://www.google-analytics.com/ https://cse.google.com/; object-src 'self'"
 }
