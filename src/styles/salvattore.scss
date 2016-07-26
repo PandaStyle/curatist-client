@@ -46,16 +46,16 @@
 @media screen and (max-width: 767px) {
   .grid,
   .grid .sticky {
-    margin-left: 30px !important;
-    margin-right: 30px  !important;
+    margin-left: 15px !important;
+    margin-right: 15px  !important;
   }
 
   .navbar .hamburger {
-    right: 45px !important;
+    right: 30px !important;
   }
 
   .navbar .small-logo a {
-    left: 55px !important;
+    left: 40px !important;
   }
 
   [data-columns]::before {
