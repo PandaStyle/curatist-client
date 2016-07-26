@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import VueResource from 'vue-resource'
+import lazyload from 'vue-lazyload'
 
 import App from './components/App.vue'
 
@@ -15,6 +16,10 @@ import $ from 'jquery';
 
 Vue.use(Router);
 Vue.use(VueResource);
+Vue.use(lazyload, {
+    loading: '/static/loading-spin.svg',
+    try: 5 // default 1
+})
 
 
 Vue.directive('img', function (url) {

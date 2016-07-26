@@ -1,7 +1,7 @@
 <template>
   <div class="tile feed-item" v-bind:class="{nopic: !item.image}">
       <a class="overlay"  href="{{item.link}}" target="_blank" ></a>
-      <div class="tile-image"><img   v-img="item.image" alt=""/></div>
+      <div class="tile-image"><img  v-lazy="item.image" alt=""/></div>
       <header>
         <a class="title" href="{{item.link}}" target="_blank">{{item.title}}</a>
         <div class="summary">{{{item.summary ? item.summary : item.description}}}</div>
@@ -31,6 +31,7 @@
         isShareActive: false
       }
     },
+
 
     methods: {
       toggleShare () {
