@@ -31,32 +31,37 @@
     height: calc(100% - 30px);
   }
 
+  .title-holder {
+    max-height: 64px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
 
   .title {
       height: 34px;
+      line-height: 1.2;
       letter-spacing: 0px;
       font-family: $heading-font-family;
       font-weight: 700;
-      font-size: 24px;
+      font-size: 23px;
       margin-bottom: 10px;
       color: #F1F1F1;
       text-decoration: none;
-      display: block;
       overflow: hidden;
     }
 
     .summary {
       overflow: hidden;
       max-height: 63px;
-      line-height: 22px;
+      line-height: 20px;
       margin-bottom: 10px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 300;
       color: $summary-color;
     }
 
     .meta {
-      font-size: 14px;
+      font-size: 12px;
       margin: 0 !important;
 
       .host {
@@ -80,6 +85,7 @@
         font-size: 18px;
         opacity: 0;
         text-decoration: none;
+        vertical-align: bottom;
 
         &:hover {
           color: $red !important;

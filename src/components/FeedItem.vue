@@ -3,7 +3,9 @@
       <a class="overlay"  href="{{item.link}}" target="_blank" ></a>
       <div class="tile-image"><img  v-lazy="item.image" alt=""/></div>
       <header>
-        <a class="title" href="{{item.link}}" target="_blank">{{item.title}}</a>
+        <div class="title-holder">
+          <a class="title" href="{{item.link}}" target="_blank">{{item.title}}</a>
+        </div>
         <div class="summary">{{{item.summary ? item.summary : item.description}}}</div>
         <div class=meta>
           <a class="host" href="{{item.link}}">{{item.feed}}</a>

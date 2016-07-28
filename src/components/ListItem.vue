@@ -2,7 +2,9 @@
   <div class="list-item">
     <div class="image"><img v-img="item.image" alt=""/></div>
     <div class="article">
-      <a class="title" href="{{item.link}}">{{item.title}}</a>
+      <div class="title-holder">
+        <a class="title" href="{{item.link}}">{{item.title}}</a>
+      </div>
       <div class="summary">{{{item.summary ? item.summary : item.description}}}</div>
       <div class=meta>
         <span class="host">{{item.feed}}</span>

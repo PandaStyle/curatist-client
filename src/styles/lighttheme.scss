@@ -1,9 +1,9 @@
 @import "globals";
-$bg-color: #F1F1F1;
+$bg-color: white;
 
 .light {
   background-image: none;
-  background-color: white;
+  background-color: $bg-color;
 
   &.sticky .menu-holder {
     background-color: white !important;
@@ -13,12 +13,12 @@ $bg-color: #F1F1F1;
     li a {
       color: $black;
     }
-    
+
     .navlink:hover {
       color: $red !important;
     }
   }
-  
+
   .small-logo a{
     background: url("../img/Curatist-logo-Web-Black.png") !important;
     background-size: contain !important;
@@ -26,35 +26,69 @@ $bg-color: #F1F1F1;
 
   .feed-item {
     .title {
-
       color: $black;
     }
+
+    &:hover {
+      .title {
+        @include defaulttransition();
+        color: black !important;
+        box-shadow: inset 0 -0.12em 0 0 $bg-color,
+        inset 0 -.18em 0 0 rgba(255, 255, 255, 0.4),
+        inset 0 -.18em 0 0 #DC8A8A !important;
+        text-decoration: none !important;
+        text-shadow: .06em 0 $bg-color,
+        -0.06em 0 $bg-color,
+        1.5px 0 $bg-color,
+        -1.5px 0 $bg-color !important;
+      }
+
+      .diff {
+        @include defaulttransition();
+        color: black !important;
+      }
+
+      .share {
+        color: black !important;
+      }
+    }
   }
+
   .list-item {
     .title {
-      @include defaulttransition();
-
       color: $black !important;
     }
 
     &:hover {
-
       cursor: pointer;
-
       .title {
-        color: $red !important;
+        @include defaulttransition();
+        color: black !important;
+        box-shadow: inset 0 -0.12em 0 0 $bg-color,
+        inset 0 -.18em 0 0 rgba(255, 255, 255, 0.2),
+        inset 0 -.18em 0 0 #DC8A8A !important;
+        text-decoration: none !important;
+        text-shadow: .06em 0 $bg-color,
+        -0.06em 0 $bg-color,
+        1.5px 0 $bg-color,
+        -1.5px 0 $bg-color !important;
       }
 
       .summary {
-        color: $summary-color !important;
+        @include defaulttransition();
+        color: $black !important;
+      }
+
+      .diff {
+        @include defaulttransition();
+        color: black !important;
+      }
+
+      .share {
+        color: black !important;
       }
     }
-  }
 
-
-
-  .share {
-    color: $black !important;
   }
 
 }

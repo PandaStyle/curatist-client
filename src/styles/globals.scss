@@ -1,5 +1,5 @@
 $red: #DC8A8A;
-$black: #444;
+  $black: #444;
 $summary-color: #969696;
 $grey: #a8acb5;
 $white: #F1F1F1;
@@ -32,6 +32,19 @@ img {
   -o-transition: all .2s ease-out;
   transition: all .2s ease-out;
 }
+
+@mixin underline($bgcolor) {
+  box-shadow: inset 0 -0.12em 0 0 $bgcolor,
+  inset 0 -.18em 0 0 rgba(255, 255, 255, 0.2),
+  inset 0 -.18em 0 0 #DC8A8A;
+  text-decoration: none;
+  text-shadow: .06em 0 $bgcolor,
+  -0.06em 0 $bgcolor,
+  1.5px 0 $bgcolor,
+  -1.5px 0 $bgcolor;
+
+}
+
 
 .disable-hover {
   pointer-events: none;

@@ -17,7 +17,7 @@ import $ from 'jquery';
 Vue.use(Router);
 Vue.use(VueResource);
 Vue.use(lazyload, {
-    loading: '/loading-spin.svg',
+    loading: '../loading-spin.svg',
     try: 5 // default 1
 })
 
