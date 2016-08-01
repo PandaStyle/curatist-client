@@ -7,9 +7,15 @@
             <ul class="menu">
                 <!--<li @click="toggleView" class="view-switcher" v-bind:class="getViewSwitcherClass()"></li>-->
                 <li class="link-border-right"><a class="navlink bold" v-link="getPath ('/feed/all')">Feed</a></li>
-                <li><a class="navlink" v-link="getPath ('/feed/design')">Design</a></li>
-                <li><a class="navlink"  v-link="getPath ('/feed/technology')">Tech</a></li>
-                <li><a class="navlink" v-link="getPath ('/feed/business')">Business</a></li>
+                <li>
+                    <div class="dd" v-bind:class="{open: isDropDownOpen}" @click="toggleDD">
+                            <a v-for="item in feedMenus" class="navlink" v-link="this.getPath(item.pathname)">
+                                {{ item.name }}
+                            </a>
+                    </div>
+                    <div class="arrowed">
+                        <div class="arrow-1"></div>
+                    </div>
                 <li class="link-border-left"><a class="navlink bold" v-link="{ path: '/instagram' }">Inspiration</a></li>
                 <li class="link-border-left">
                     <a class="navlink bold" v-link="{ path: '/search' }">Search</a>
@@ -55,6 +61,7 @@
 
 <script type="text/babel">
     import $ from 'jquery';
+    import Dropdown from './Dropdown.vue';
     import MenuWhat from './MenuWhat.vue';
     import MenuFeedback from './MenuFeedback.vue';
     import MenuAbout from './MenuAbout.vue';
@@ -67,13 +74,31 @@
         data () {
             return {
                 view: "",
+                feed: "",
                 isMenuActive: false,
+                isDropDownOpen: false,
                 activeMenuView: "",
                 theme: "",
-                previousScroll: 0
+                previousScroll: 0,
+
+                feedMenus: [
+                    {
+                        name: 'design',
+                        pathname: 'design'
+                    },
+                    {
+                        name: 'tech',
+                        pathname: 'technology'
+                    },
+                    {
+                        name: 'business',
+                        pathname: 'business'
+                    }
+                ]
             }
         },
         components: {
+            Dropdown,
             MenuWhat,
             MenuFeedback,
             MenuAbout,
@@ -98,6 +123,7 @@
         ready () {
             this.theme = localStorage.getItem('curatist_theme') ? localStorage.getItem('curatist_theme') : 'dark'; 
             this.view = this.$route.path.substr(this.$route.path.lastIndexOf('/') + 1);
+            this.feed = this.$route.params.type;
 
             $(window).bind('scroll', this.scrollHandler)
         },
@@ -123,7 +149,7 @@
             },
             getPath (path) {
                     return {
-                        path: path + "/" + this.view
+                        path: "/feed/" + path +"/" + this.view
                     }
             },
             getViewSwitcherClass () {
@@ -159,6 +185,10 @@
 
             showMobileNav () {
                 $('.navbar .menu').addClass("hidden").removeClass("hidden");
+            },
+
+            toggleDD () {
+                this.isDropDownOpen = !this.isDropDownOpen
             }
         }
 
