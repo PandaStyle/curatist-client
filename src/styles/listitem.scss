@@ -52,16 +52,16 @@
 
     .summary {
       overflow: hidden;
-      max-height: 63px;
-      line-height: 20px;
+      max-height: 64px;
+      line-height: 22px;
       margin-bottom: 10px;
-      font-size: 13px;
+      font-size: $summary-font-size;
       font-weight: 300;
       color: $summary-color;
     }
 
     .meta {
-      font-size: 12px;
+      font-size: 13px;
       margin: 0 !important;
 
       .host {

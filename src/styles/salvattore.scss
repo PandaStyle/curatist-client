@@ -1,6 +1,6 @@
 
 .grid {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 30px 30px;
 }
 
@@ -86,6 +86,21 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .grid,
+  .grid .sticky {
+    margin-left: 30px  !important;
+    margin-right: 30px  !important;
+  }
+
+  .navbar .hamburger {
+    right: 45px !important;
+  }
+
+  .navbar .small-logo a {
+    left: 55px !important;
+  }
+
+
   [data-columns]::before {
     content: '3 .column.size-1of3';
   }
@@ -93,14 +108,13 @@
 }
 
 
-@media screen and (min-width: 1540px) {
+@media screen and (min-width: 1360px) {
   .grid {
-    max-width: 1400px;
-    margin: 30px auto;
+    margin: 30px auto !important;
   }
 
   .sticky .grid {
-    margin: 110px auto;
+    margin: 110px auto !important;
   }
 
 

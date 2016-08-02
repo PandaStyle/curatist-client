@@ -72,10 +72,10 @@
 
     .summary {
       overflow: hidden;
-      max-height: 58px;
-      line-height: 20px;
+      max-height: 64px;
+      line-height: 22px;
       margin-bottom: 8px;
-      font-size: 13px;
+      font-size: $summary-font-size;
       font-family: $paragraph-font-family;
       font-weight: 300;
       color: $summary-color;
@@ -83,7 +83,7 @@
 
     .meta {
       margin: 0 !important;
-      font-size: 12px;
+      font-size: 13px;
 
       .host {
         padding-right: 10px;
