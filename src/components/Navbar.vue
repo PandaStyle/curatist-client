@@ -12,7 +12,7 @@
                         <div class="arrow-1"></div>
                     </div>-->
                     <div class="dd" v-bind:class="{open: isDropDownOpen}" @click="toggleDD">
-                            <a v-for="item in feedMenus" class="navlink" v-link="this.getPath(item.pathname)">
+                            <a v-for="item in feedMenus" v-bind:id="item.name" class="navlink" v-link="this.getPath(item.pathname)" @click="reorder(item.name)">
                                 {{ item.name }}
                             </a>
                     </div>
@@ -66,6 +66,8 @@
     import MenuAbout from './MenuAbout.vue';
     import MenuSettings from './MenuSettings.vue';
 
+    import store from '../vuex/store'
+
     export default {
 
         name: 'Navbar',
@@ -73,12 +75,17 @@
         data () {
             return {
                 view: "",
-                feed: "",
+
                 isMenuActive: false,
                 isDropDownOpen: false,
                 activeMenuView: "",
                 theme: "",
                 previousScroll: 0,
+
+                selectedFeed: {
+                    name: 'all',
+                    pathname: 'all'
+                },
 
                 feedMenus: [
                     {
@@ -121,6 +128,7 @@
                 localStorage.setItem('curatist_view', val)
             }
         },
+
 
         ready () {
             this.theme = localStorage.getItem('curatist_theme') ? localStorage.getItem('curatist_theme') : 'dark';
@@ -191,6 +199,10 @@
 
             toggleDD () {
                 this.isDropDownOpen = !this.isDropDownOpen
+            },
+            reorder(name) {
+                console.log(name)
+                $('.dd').prepend($('.dd a#'+name))
             }
         }
 
