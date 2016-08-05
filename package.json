@@ -46,6 +46,7 @@
     "vue": "^1.0.8",
     "vue-lazyload": "^0.4.3",
     "vue-resource": "^0.1.17",
-    "vue-router": "^0.7.5"
+    "vue-router": "^0.7.5",
+    "vuex": "^0.8.2"
   }
 }
