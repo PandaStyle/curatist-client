@@ -17,6 +17,8 @@
 
     import imagesLoaded from 'imagesloaded';
 
+    import _gaLt from '../scripts/ga_clicks'
+
     const API_URL_FEED = 'http://www.curatist.co:8081/feed/';
     const API_URL_INSP = 'http://www.curatist.co:8081/getposts/';
 
@@ -60,6 +62,16 @@
                 })
             },
             canReuse: false
+        },
+
+
+        ready () {
+            //ga
+            var _w = window;
+            /* Use "click" if touchscreen device, else "mousedown" */
+            var _gaLtEvt = ("ontouchstart" in _w) ? "click" : "mousedown";
+            /* Attach the event to all clicks in the document after page has loaded */
+            document.body.addEventListener(_gaLtEvt, _gaLt, !1);
         }
     }
 </script>
