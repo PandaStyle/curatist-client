@@ -9,12 +9,13 @@ var InstagramItem = Vue.extend({
     },
 
 
-    template: '<div @click="inspirationItemClick(item)" class="tile inspiration" data-instagramid="{{item.id}}" >' +
+    template: '<div class="tile inspiration" data-instagramid="{{item.id}}" >' +
     '<a class="overlay" @click="inspirationItemOverlayClick(item)">' +
     '<div class="lay"></div>' +
-   /* '<div class="blogname">{{item.username}}</div>' +
-    '<div class="notecount">{{item.likes.count}}</div>' +*/
     '</a>' +
+    '<div class="instameta">' +
+    '<span class="blogname">{{item.username}}</span>' +
+    '</div>' +
     '<img v-img="item.display_src" alt=""/>' +
     '</div>'
     ,

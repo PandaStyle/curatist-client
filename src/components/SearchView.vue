@@ -65,6 +65,7 @@
 </script>
 
 <style lang="sass">
+    @import "../styles/globals.scss";
 
     .whatareyoulooking {
         text-align: left;
@@ -103,7 +104,8 @@
     }
 
     .gs-title, .gs-title a, .gs-title b {
-        font-weight: bold !important;
+
+        font-family: $heading-font-family !important;
         font-size: 20px !important;
         text-decoration: none !important;
 
@@ -112,21 +114,23 @@
 
     }
 
+
+
     .gsc-tabsArea {
         display: none !important;
     }
 
     .gs-webResult .gs-snippet, .gs-imageResult .gs-snippet, .gs-fileFormatType {
         padding-top: 5px !important;
-        font-size: 15px !important;
-
-        font-weight: 700 !important;
+        font-size: 14px !important;
+        line-height: 20px !important;
+        font-weight: 400 !important;
         color: #968f8f !important;
     }
 
     .gsc-url-bottom {
 
-        font-weight: 700 !important;
+        font-weight: 400 !important;
     }
 
     .gsc-refinementsArea, .gsc-above-wrapper-area {
@@ -162,6 +166,10 @@
     form.gsc-search-box {
         margin: 0 auto !important;
         max-width: 600px !important;
+    }
+
+    .cse .gsc-webResult.gsc-result, .gsc-webResult.gsc-result, .gsc-imageResult-classic, .gsc-imageResult-column{
+        margin-bottom: 2em !important;
     }
 
 

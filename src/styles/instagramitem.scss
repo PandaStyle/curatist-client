@@ -1,0 +1,50 @@
+@import "../styles/globals.scss";
+
+.tile.inspiration {
+
+  opacity:1 ;
+
+  .overlay {
+    @include defaulttransition();
+    height: 100%;
+  }
+
+  &:hover {
+    .overlay {
+      background-color: black;
+      opacity: 0.5;
+
+    }
+
+    .blogname, .likes {
+      opacity:1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+
+  .instameta  {
+    @include defaulttransition();
+    font-size: 20px;
+    position: absolute;
+    bottom: 15px;
+    color: white;
+    z-index: 10000;
+  }
+
+  .blogname {
+    -webkit-transform: translateY(-10%);
+    transform: translateY(-10%);
+    opacity: 0;
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+
+  .likes {
+    -webkit-transform: translateY(-10%);
+    transform: translateY(-10%);
+    opacity: 0;
+    padding-left: 10px;
+  }
+
+}

@@ -115,7 +115,9 @@
     }
 </script>
 
-<style>
+<style lang="sass">
+    @import "../styles/instagramitem.scss";
+
     .tile:hover{
         cursor: pointer;
     }
