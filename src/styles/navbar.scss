@@ -126,7 +126,7 @@ $button-width: 27px;
     display: block;
     font-size: 23px;
     float: right;
-    color: $summary-color;
+    color: white;
     position: absolute;
     right: 46px;
     top: 5px;
@@ -163,7 +163,7 @@ $button-width: 27px;
     }
 
     &:hover span {
-      background: $red;
+      background: $red !important;
     }
 
     &.active {
@@ -194,7 +194,7 @@ $button-width: 27px;
     }
 
     span {
-      background: $black;
+      background: white;
       border: none;
       height: 1px;
       width: 100%;
@@ -216,6 +216,25 @@ $button-width: 27px;
 
 }
 
+.blackLayer {
+  @include defaulttransition();
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 100;
+  pointer-events: none;
+
+  &.dark {
+      pointer-events: all;
+      opacity: .6 !important;
+  }
+}
+
+
 menu {
   @include defaulttransition();
 
@@ -226,40 +245,45 @@ menu {
   filter: alpha(opacity=0);
   position: fixed;
   height: 100%;
-  width: 100%;
+  width: 250px;
   top: 0;
-  left: 0;
+  right: 0;
   visibility: hidden;
   z-index: 0;
-  background-color: #F1F1F1;
+  background-color: white;
 
   &.open {
     visibility: visible;
     opacity: 1;
     z-index: 500;
+
+    &.wide {
+      width: 900px;
+    }
   }
 
   ul {
-    width: 300px;
+    width: 250px;
     position: relative;
-    top: 20%;
-    float: left;
+    top: 15%;
+    float: right;
 
     &.border {
       border-right: 1px solid $light-grey;
     }
 
     li {
-      font-size: 3.8rem;
+      font-size: 2.2em;
+      line-height: 1.6em;
       vertical-align: baseline;
       list-style: none;
 
       a {
-        color: $grey;
+        color: $summary-color;
         text-decoration: none;
 
         &:hover {
-          color: $dark-grey;
+          color: $black;
         }
       }
 
@@ -291,14 +315,14 @@ menu {
   .menucontent {
     float: left;
     position: relative;
-    top: 20%;
+    top: 15%;
     padding: 0 0 0 80px;
     display: inline-block;
-    max-width: 600px;
+    max-width: 450px;
 
     h2 {
       font-size: 2rem;
-      color: $dark-grey;
+      color: $black
     }
   }
 
@@ -307,32 +331,33 @@ menu {
     position: relative;
 
     &:after {
-      height: 3px;
+      height: 1px;
       width: 0;
       display: block;
       background: #17191c;
       content: "";
       position: absolute;
       left: 0;
-      bottom: -3px;
+      bottom: 4px;
     }
 
     &:hover:after {
       @include defaulttransition();
       width: 100%;
-      background: $dark-grey;
+      background: $black;
     }
 
     &.active:after {
       width: 100%;
-      background: $dark-grey;
+      background: $black;
     }
     &.active {
-      color: $dark-grey;
+      color: $black;
     }
-
   }
 }
+
+
 
 .dd {
   width: 98px;

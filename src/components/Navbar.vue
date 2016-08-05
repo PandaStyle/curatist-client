@@ -4,7 +4,7 @@
             <a class="logo-img" href="/"></a>
         </div>
         <div class="menu-holder">
-            <ul class="menu">
+            <ul class="menu"">
                 <!--<li @click="toggleView" class="view-switcher" v-bind:class="getViewSwitcherClass()"></li>-->
                 <li class="link-border-right"><a class="navlink bold" v-link="getPath ('/feed/all')">Feed</a></li>
                 <li><a class="navlink" v-link="getPath ('/feed/design')">Design</a></li>
@@ -27,12 +27,17 @@
             <a href="/"></a>
         </div>
     </div>
+    <div class="blackLayer" v-bind:class="{dark: isMenuActive}"></div>
 
-    <menu v-bind:class="{open: isMenuActive}">
+
+    <menu v-bind:class="{open: isMenuActive, wide: isMenuWide}">
 
         <ul class="menu-list" v-bind:class="{border: activeMenuView}">
             <li>
                 <a data-menuview="MenuSettings" class="bordered" v-bind:class="{active: activeMenuView=='MenuSettings'}" href="#" @click="toggleMenuView">Settings</a>
+            </li>
+            <li>
+                <a data-menuview="MenuUpdates" class="bordered" v-bind:class="{active: activeMenuView=='MenuUpdates'}" href="#" @click="toggleMenuView">Updates</a>
             </li>
             <li>
                 <a data-menuview="MenuWhat" class="bordered" v-bind:class="{active: activeMenuView=='MenuWhat'}" href="#" @click="toggleMenuView">What?</a>
@@ -60,6 +65,7 @@
     import MenuFeedback from './MenuFeedback.vue';
     import MenuAbout from './MenuAbout.vue';
     import MenuSettings from './MenuSettings.vue';
+    import MenuUpdates from './MenuUpdates.vue';
 
     import store from '../vuex/store'
 
@@ -106,7 +112,8 @@
             MenuWhat,
             MenuFeedback,
             MenuAbout,
-            MenuSettings
+            MenuSettings,
+            MenuUpdates
         },
 
         watch: {
@@ -121,6 +128,23 @@
             'view': function (val) {
                 this.toggleMenu()
                 localStorage.setItem('curatist_view', val)
+            },
+
+            'isMenuActive': function (val) {
+                if(!val){
+                    store.dispatch('SET_MENU_WIDE_FALSE')
+                }
+                this.activeMenuView = "";
+            }
+        },
+
+        computed: {
+            isMenuOpen () {
+                return store.state.isMenuOpen
+            },
+
+            isMenuWide () {
+                return store.state.isMenuWide
             }
         },
 
@@ -138,6 +162,10 @@
                 this.isMenuActive = !this.isMenuActive;
             },
             toggleMenuView (a) {
+
+                    if(!this.isMenuWide)
+                        store.dispatch('TOGGLE_MENU_WIDE')
+
                 this.activeMenuView = a.currentTarget.attributes[0].value;
             },
             toggleView (v) {
