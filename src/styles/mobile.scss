@@ -1,5 +1,11 @@
 @import "globals";
 
+@media screen and (min-width: 768px) and (max-width: 979px) {
+  .navbar li a {
+    padding: 15px 5px !important;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .navbar .menu {
     padding-left: 0;
@@ -30,9 +36,6 @@
 
 }
 
-.hamburger {
-  display: none !important;
-}
 
 .sticky .hamburger {
   display: block !important;
@@ -46,3 +49,4 @@
   }
 
 }
+

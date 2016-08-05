@@ -142,8 +142,31 @@ $button-width: 27px;
     z-index: 1000;
     transition: opacity .25s ease;
 
+    .hamb-menu-text {
+      @include defaulttransition()
+      opacity: 0;
+      position: absolute;
+      top: -4px;
+      right: 36px;
+      font-family: $paragraph-font-family;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: $black;
+    }
+
+    &:hover .hamb-menu-text {
+      opacity: 1;
+    }
+
+    &:hover span {
+      background: $red;
+    }
 
     &.active {
+      .hamb-menu-text {
+        opacity: 0;
+      }
+
       position: fixed;
 
       .top {
@@ -167,9 +190,9 @@ $button-width: 27px;
     }
 
     span {
-      background: #AAAAAA;
+      background: $black;
       border: none;
-      height: 3px;
+      height: 2px;
       width: 100%;
       position: absolute;
       top: 0;

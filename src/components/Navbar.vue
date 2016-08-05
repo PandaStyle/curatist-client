@@ -6,16 +6,10 @@
         <div class="menu-holder">
             <ul class="menu">
                 <!--<li @click="toggleView" class="view-switcher" v-bind:class="getViewSwitcherClass()"></li>-->
-                <li class=""><a class="navlink bold">Feed</a></li>
-                <li>
-                <!--    <div class="arrowed">
-                        <div class="arrow-1"></div>
-                    </div>-->
-                    <div class="dd" v-bind:class="{open: isDropDownOpen}" @click="toggleDD">
-                            <a v-for="item in feedMenus" v-bind:id="item.name" class="navlink" v-link="this.getPath(item.pathname)" @click="reorder(item.name)">
-                                {{ item.name }}
-                            </a>
-                    </div>
+                <li class="link-border-right"><a class="navlink bold" v-link="getPath ('/feed/all')">Feed</a></li>
+                <li><a class="navlink" v-link="getPath ('/feed/design')">Design</a></li>
+                <li><a class="navlink"  v-link="getPath ('/feed/technology')">Tech</a></li>
+                <li><a class="navlink" v-link="getPath ('/feed/business')">Business</a></li>
                 <li class="link-border-left"><a class="navlink bold" v-link="{ path: '/instagram' }">Inspiration</a></li>
                 <li class="link-border-left">
                     <a class="navlink bold" v-link="{ path: '/search' }">Search</a>
@@ -24,6 +18,7 @@
             </ul>
         </div>
         <div class="hamburger button_container"  v-bind:class="{active: isMenuActive}" id="toggle" @click="toggleMenu">
+            <div class="hamb-menu-text">menu</div>
             <span class="top"></span>
             <span class="middle"></span>
             <span class="bottom"></span>
@@ -159,7 +154,7 @@
             },
             getPath (path) {
                     return {
-                        path: "/feed/" + path +"/" + this.view
+                        path: path +"/" + this.view
                     }
             },
             getViewSwitcherClass () {
