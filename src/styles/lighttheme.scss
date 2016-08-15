@@ -2,8 +2,7 @@
 $bg-color: white;
 
 .light {
-  background-image: none;
-  background-color: $bg-color;
+  background: $bg-color none;
 
   &.sticky .menu-holder {
     background-color: white !important;
@@ -27,7 +26,7 @@ $bg-color: white;
   }
 
   .small-logo a{
-    background: url("../img/Curatist-logo-Web-Black.png") !important;
+    background: url("../img/curatist-glasses-000.png") !important;
     background-size: contain !important;
   }
 

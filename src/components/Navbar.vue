@@ -150,7 +150,7 @@
 
 
         ready () {
-            this.theme = localStorage.getItem('curatist_theme') ? localStorage.getItem('curatist_theme') : 'dark';
+            this.theme = localStorage.getItem('curatist_theme') ? localStorage.getItem('curatist_theme') : 'light';
             this.view = this.$route.path.substr(this.$route.path.lastIndexOf('/') + 1);
             this.feed = this.$route.params.type;
 
