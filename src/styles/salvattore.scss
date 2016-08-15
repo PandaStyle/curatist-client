@@ -4,9 +4,6 @@
   margin: 30px 30px;
 }
 
-.navbar .menu {
-  max-width: 1240px;
-}
 
 .sticky .grid {
   margin: 110px 30px;
@@ -77,22 +74,13 @@
 
 @media screen and (min-width: 1200px) {
   .grid,
-  .grid .sticky {
-    margin-left: 30px  !important;
-    margin-right: 30px  !important;
-  }
+  .grid .sticky,
+
 
 
   [data-columns]::before {
     content: '3 .column.size-1of3';
   }
-
-  .navbar .menu {
-    max-width: 1240px;
-    margin-left:  auto !important;
-    margin-right:  auto !important;
-  }
-
 
 }
 
@@ -104,6 +92,16 @@
 
   .sticky .grid {
     margin: 110px auto !important;
+  }
+
+
+  .navbar .menu{
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .small-logo {
+    right: 60px !important;
   }
 
 

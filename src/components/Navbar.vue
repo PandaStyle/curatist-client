@@ -214,15 +214,15 @@
 
 
                 /* mobile nav */
-                let currentScroll = $(window).scrollTop();
-                if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()){
-                    if (currentScroll > this.previousScroll){
-                        this.hideMobileNav()
-                    } else {
-                        this.showMobileNav()
-                    }
-                    this.previousScroll = currentScroll;
-                }
+                   /* let currentScroll = $(window).scrollTop();
+                    if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()){
+                        if (currentScroll > this.previousScroll){
+                            this.hideMobileNav()
+                        } else {
+                            this.showMobileNav()
+                        }
+                        this.previousScroll = currentScroll;
+                    }*/
             },
 
             hideMobileNav () {
