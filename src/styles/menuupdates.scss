@@ -1,0 +1,27 @@
+@import "globals";
+
+.menuupdates {
+
+  .update-list {
+
+    .update-item  {
+      margin: 20px;
+    }
+
+    .update-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .update-date {
+      margin: 3px 0;
+      font-size: 12px;
+      font-family: $paragraph-font-family;
+    }
+
+
+
+
+
+  }
+}

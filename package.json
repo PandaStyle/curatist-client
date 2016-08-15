@@ -40,6 +40,7 @@
     "zip-dir": "^1.0.2"
   },
   "dependencies": {
+    "click-outside": "^2.0.2",
     "hapi": "^11.1.2",
     "inert": "^3.2.0",
     "jquery-scrollstop": "^1.2.0",

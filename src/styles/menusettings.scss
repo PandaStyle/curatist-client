@@ -2,21 +2,83 @@
 
 .menusettings {
 
-  width: 300px;
-  text-align: center;
 
   .section {
-    margin: 50px 0;
+    margin: 20px 0;
+
+    .selection {
+      text-align: center;
+    }
 
     .title {
       font-style: italic;
       font-size: 20px;
     }
 
-    .option {
+    #grid {
+      background: url('../img/tiles-light.png');
+    }
+
+    #list {
+      background: url('../img/magazine-light.png');
+    }
+
+    #pic {
+      background: url('../img/pics-light.png');
+    }
+
+    #grid-dark {
+      background: url('../img/tiles-dark.png');
+    }
+
+    #list-dark {
+      background: url('../img/magazine-dark.png');
+    }
+
+    #pic-dark {
+      background: url('../img/pics-dark.png');
+    }
+
+
+    .item {
+
       display: inline-block;
+      margin: 15px 25px 15px 0;
       text-align: center;
-      margin: 30px;
+      .type{
+        text-transform: uppercase;
+        margin: 5px 0 0 0;
+        font-size: 16px;
+        font-family: $paragraph-font-family;
+      }
+      .desc {
+        font-style: italic;
+        color: $grey;
+        font-size: 14px;
+      }
+
+    }
+
+    .item.theme .option{
+      width: 100px;
+      height: 70px;
+      border: 1px solid $black;
+    };
+
+    .theme-dark .option{
+      background-color: $black;
+    }
+
+
+    .option {
+      border: 2px solid white;
+      background-size: contain !important;
+      width: 100px;
+      height: 70px;
+      margin-bottom: 15px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
       font-size: 24px;
       color: $grey;
 
@@ -29,9 +91,20 @@
         color: $dark-grey;
       }
 
+      &.selected {
+          border: 2px solid $red !important;
+      }
+
 
     }
 
+
+  }
+
+  .x {
+    margin: 0 auto;
+    font-size: 24px;
+    text-align: center;
   }
 
 

@@ -1,6 +1,7 @@
 <template>
     <div class="menuwhat">
         <h2>What is The Curatist?</h2>
+        <div class="underline"></div>
         <p>
             A single platform to browse all the architectural news that keeps you ahead and inspired. The Curatist aggregates and filters quality content from around the web and presents it to you in a clean, organized and nondistractive way.
             <br/>

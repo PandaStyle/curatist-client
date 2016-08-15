@@ -3,8 +3,14 @@
         <div class="logo">
             <a class="logo-img" href="/"></a>
         </div>
+        <div class="hamburger button_container"  v-bind:class="{active: isMenuActive}" id="toggle" @click="toggleMenu">
+            <div class="hamb-menu-text">menu</div>
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+        </div>
         <div class="menu-holder">
-            <ul class="menu"">
+            <ul class="menu">
                 <!--<li @click="toggleView" class="view-switcher" v-bind:class="getViewSwitcherClass()"></li>-->
                 <li class="link-border-right"><a class="navlink bold" v-link="getPath ('/feed/all')">Feed</a></li>
                 <li><a class="navlink" v-link="getPath ('/feed/design')">Design</a></li>
@@ -14,18 +20,14 @@
                 <li class="link-border-left">
                     <a class="navlink bold" v-link="{ path: '/search' }">Search</a>
                 </li>
+                <li class="small-logo">
+                    <a href="/"></a>
+                </li>
                 <!--<li class="theme-switcher" @click="toggleTheme" ></li>-->
             </ul>
         </div>
-        <div class="hamburger button_container"  v-bind:class="{active: isMenuActive}" id="toggle" @click="toggleMenu">
-            <div class="hamb-menu-text">menu</div>
-            <span class="top"></span>
-            <span class="middle"></span>
-            <span class="bottom"></span>
-        </div>
-        <div class="small-logo">
-            <a href="/"></a>
-        </div>
+
+
     </div>
     <div class="blackLayer" v-bind:class="{dark: isMenuActive}"></div>
 
@@ -34,21 +36,20 @@
 
         <ul class="menu-list" v-bind:class="{border: activeMenuView}">
             <li>
-                <a data-menuview="MenuSettings" class="bordered" v-bind:class="{active: activeMenuView=='MenuSettings'}" href="#" @click="toggleMenuView">Settings</a>
+                <a data-menuview="MenuSettings" class="bordered" v-bind:class="{active: activeMenuView=='MenuSettings'}"  @click="toggleMenuView">Layouts</a>
             </li>
             <li>
-                <a data-menuview="MenuUpdates" class="bordered" v-bind:class="{active: activeMenuView=='MenuUpdates'}" href="#" @click="toggleMenuView">Updates</a>
+                <a data-menuview="MenuWhat" class="bordered" v-bind:class="{active: activeMenuView=='MenuWhat'}"  @click="toggleMenuView">What?</a>
             </li>
             <li>
-                <a data-menuview="MenuWhat" class="bordered" v-bind:class="{active: activeMenuView=='MenuWhat'}" href="#" @click="toggleMenuView">What?</a>
+                <a data-menuview="MenuAbout"  data-menuview="layouts"class="bordered" v-bind:class="{active: activeMenuView=='MenuAbout'}" @click="toggleMenuView">Who?</a>
             </li>
             <li>
-                <a data-menuview="MenuAbout"  data-menuview="layouts"class="bordered" v-bind:class="{active: activeMenuView=='MenuAbout'}" href="#" @click="toggleMenuView">Who?</a>
+                <a data-menuview="MenuFeedback" class="bordered" v-bind:class="{active: activeMenuView=='MenuFeedback'}" @click="toggleMenuView">Thoughts?</a>
             </li>
             <li>
-                <a data-menuview="MenuFeedback" class="bordered" v-bind:class="{active: activeMenuView=='MenuFeedback'}" href="#" @click="toggleMenuView">Thoughts?</a>
+                <a data-menuview="MenuUpdates" class="bordered" v-bind:class="{active: activeMenuView=='MenuUpdates'}"  @click="toggleMenuView">Updates</a>
             </li>
-
         </ul>
         <div class="menucontent">
             <component :is="activeMenuView" transition-mode="out-in" transition="expand" keep-alive>
@@ -61,6 +62,7 @@
 
 <script type="text/babel">
     import $ from 'jquery';
+    import clickOutside from 'click-outside';
     import MenuWhat from './MenuWhat.vue';
     import MenuFeedback from './MenuFeedback.vue';
     import MenuAbout from './MenuAbout.vue';
@@ -119,14 +121,12 @@
         watch: {
             'theme': function (val) {
                 $('body').attr("class", val);
-                this.toggleMenu()
                 localStorage.setItem('curatist_theme', val)
 
 
             },
 
             'view': function (val) {
-                this.toggleMenu()
                 localStorage.setItem('curatist_view', val)
             },
 
@@ -160,13 +160,25 @@
         methods: {
             toggleMenu () {
                 this.isMenuActive = !this.isMenuActive;
+
+                if(this.isMenuActive){
+                    setTimeout(() => {
+                        var unbind = clickOutside(document.querySelector('menu'),  e => {
+                            this.isMenuActive = false;
+                            setTimeout(function () {
+                                unbind();
+                            }, 50);
+                        });
+                    }, 100)
+                }
             },
             toggleMenuView (a) {
-
                     if(!this.isMenuWide)
                         store.dispatch('TOGGLE_MENU_WIDE')
 
+
                 this.activeMenuView = a.currentTarget.attributes[0].value;
+
             },
             toggleView (v) {
                 if(this.$route.params.type == "inspiration"){
@@ -176,6 +188,10 @@
                 this.view = v;
                 this.$route.router.go(v);
             },
+            toggleTheme (t) {
+                this.theme = t;
+            },
+
             getView () {
                 var p = this.$route.path;
                 return p.substr(p.lastIndexOf('/') + 1);
@@ -187,9 +203,6 @@
             },
             getViewSwitcherClass () {
                 return this.view == "tile" ? "icon-text" : "icon-grid";
-            },
-            toggleTheme (t) {
-                this.theme = t;
             },
 
             scrollHandler (e) {
@@ -226,7 +239,10 @@
             reorder(name) {
                 console.log(name)
                 $('.dd').prepend($('.dd a#'+name))
-            }
+            },
+
+
+
         }
 
     }

@@ -4,9 +4,14 @@
   margin: 30px 30px;
 }
 
+.navbar .menu {
+  max-width: 1240px;
+}
+
 .sticky .grid {
   margin: 110px 30px;
 }
+
 
 
 
@@ -50,13 +55,7 @@
     margin-right: 15px  !important;
   }
 
-  .navbar .hamburger {
-    right: 30px !important;
-  }
 
-  .navbar .small-logo a {
-    left: 40px !important;
-  }
 
   [data-columns]::before {
     content: '1 .column';
@@ -69,15 +68,6 @@
     margin-left: 30px  !important;
     margin-right: 30px  !important;
   }
-
-  .navbar .hamburger {
-    right: 45px !important;
-  }
-
-  .navbar .small-logo a {
-    left: 55px !important;
-  }
-
 
 
   [data-columns]::before {
@@ -92,18 +82,17 @@
     margin-right: 30px  !important;
   }
 
-  .navbar .hamburger {
-    right: 45px !important;
-  }
-
-  .navbar .small-logo a {
-    left: 55px !important;
-  }
-
 
   [data-columns]::before {
     content: '3 .column.size-1of3';
   }
+
+  .navbar .menu {
+    max-width: 1240px;
+    margin-left:  auto !important;
+    margin-right:  auto !important;
+  }
+
 
 }
 

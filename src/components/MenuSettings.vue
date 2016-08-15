@@ -1,20 +1,29 @@
 <template>
     <div class="menusettings">
-        <div class="section">
-            <div class="title">Layout</div>
+        <h2>Layouts</h2>
+        <div class="underline"></div>
+        <div class="section ">
             <div class="selection">
-                <span id="grid" class="bordered option" v-bind:class="{active: $parent.view == 'tile'}" @click="$parent.toggleView('tile')">grid</span>
-                <span id="list" class="bordered option" v-bind:class="{active: $parent.view == 'list'}" @click="$parent.toggleView('list')">list</span>
-                <span id="pic" class="bordered option" v-bind:class="{active: $parent.view == 'pic'}" @click="$parent.toggleView('pic')">pic</span>
-            </div>
-        </div>
+                <div class="item" >
+                    <div id="list" class="option"  @click="toggleCombo('list', 'light')" v-bind:class="{selected: getCombo('list', 'light')}"></div>
+                    <div id="list-dark" class="option"  @click="toggleCombo('list', 'dark')" v-bind:class="{selected: getCombo('list', 'dark')}"></div>
+                    <div class="type">Magazine</div>
+                    <div class="desc">Old time favorite.</div>
+                </div>
 
+                <div class="item" >
+                    <div id="grid" class="option"  @click="toggleCombo('tile', 'light')" v-bind:class="{selected: getCombo('tile', 'light')}"></div>
+                    <div id="grid-dark" class="option"  @click="toggleCombo('tile', 'dark')" v-bind:class="{selected: getCombo('tile', 'dark')}"></div>
+                    <div class="type">Tile</div>
+                    <div class="desc">Overlook at a glance.</div>
+                </div>
 
-        <div class="section">
-            <div class="title">Theme</div>
-            <div class="selection">
-                <span id="dark" class="option bordered" v-bind:class="{active: $parent.theme == 'dark'}"  @click="$parent.toggleTheme('dark')">dark</span>
-                <span id="light" class="option bordered" v-bind:class="{active: $parent.theme == 'light'}" @click="$parent.toggleTheme('light')">light</span>
+                <div class="item">
+                    <div id="pic" class="option" @click="toggleCombo('pic', 'light')"  v-bind:class="{selected: getCombo('pic', 'light')}"></div>
+                    <div id="pic-dark" class="option" @click="toggleCombo('pic', 'dark')" v-bind:class="{selected: getCombo('pic', 'dark')}"></div>
+                    <div class="type">Grid</div>
+                    <div class="desc">Pictures over text.</div>
+                </div>
             </div>
         </div>
 
@@ -26,8 +35,19 @@
     import $ from 'jquery';
 
     export default {
-        name: 'MenuSettings'
+        name: 'MenuSettings',
 
+        methods: {
+            toggleCombo (view, theme) {
+                this.$parent.toggleView(view);
+                this.$parent.toggleTheme(theme)
+            },
+
+            getCombo( view, theme) {
+                return this.$parent.view == view && this.$parent.theme == theme;
+            }
+
+        }
     }
 </script>
 

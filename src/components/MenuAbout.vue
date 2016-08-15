@@ -1,6 +1,7 @@
 <template>
     <div class="menuabout">
         <h2>Who are we?</h2>
+        <div class="underline"></div>
         <p>
             We are a coder-designer couple who had a problem: the curious architect girl loved to see all the news but got tired having to click around to countless websites; and the smart software guy knew there is a better way.
             <br/>   <br/>
