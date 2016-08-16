@@ -12,6 +12,9 @@ import SearchView from './components/SearchView.vue'
 
 import InstagramView from './components/Instagram.vue'
 
+import MobilePages from './components/MobilePages.vue'
+
+
 import $ from 'jquery';
 
 Vue.use(Router);
@@ -62,7 +65,13 @@ router.map({
 
     '/search': {
         component: SearchView
+    },
+
+
+    '/mobile': {
+        component: MobilePages
     }
+
 });
 
 router.redirect({

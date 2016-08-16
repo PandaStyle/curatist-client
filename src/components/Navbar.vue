@@ -50,6 +50,9 @@
             <li>
                 <a data-menuview="MenuUpdates" class="bordered" v-bind:class="{active: activeMenuView=='MenuUpdates'}"  @click="toggleMenuView">Updates</a>
             </li>
+            <li>
+                <a data-menuview="MenuShare" class="bordered" v-bind:class="{active: activeMenuView=='MenuShare'}"  @click="toggleMenuView">Share</a>
+            </li>
         </ul>
         <div class="menucontent">
             <component :is="activeMenuView" transition-mode="out-in" transition="expand" keep-alive>
@@ -68,6 +71,7 @@
     import MenuAbout from './MenuAbout.vue';
     import MenuSettings from './MenuSettings.vue';
     import MenuUpdates from './MenuUpdates.vue';
+    import MenuShare from './MenuShare.vue';
 
     import store from '../vuex/store'
 
@@ -115,15 +119,14 @@
             MenuFeedback,
             MenuAbout,
             MenuSettings,
-            MenuUpdates
+            MenuUpdates,
+            MenuShare
         },
 
         watch: {
             'theme': function (val) {
                 $('body').attr("class", val);
                 localStorage.setItem('curatist_theme', val)
-
-
             },
 
             'view': function (val) {
@@ -161,24 +164,36 @@
             toggleMenu () {
                 this.isMenuActive = !this.isMenuActive;
 
-                if(this.isMenuActive){
-                    setTimeout(() => {
-                        var unbind = clickOutside(document.querySelector('menu'),  e => {
-                            this.isMenuActive = false;
-                            setTimeout(function () {
-                                unbind();
-                            }, 50);
-                        });
-                    }, 100)
+                //if not on mobile
+                if(!window.matchMedia('(max-width: 768px)').matches){
+                    if(this.isMenuActive){
+                        setTimeout(() => {
+                            var unbind = clickOutside(document.querySelector('menu'),  e => {
+                                this.isMenuActive = false;
+                                setTimeout(function () {
+                                    unbind();
+                                }, 50);
+                            });
+                        }, 100)
+                    }
                 }
+
             },
             toggleMenuView (a) {
-                    if(!this.isMenuWide)
-                        store.dispatch('TOGGLE_MENU_WIDE')
+                let selectedMenu = a.currentTarget.attributes[0].value;
+
+                if(window.matchMedia('(max-width: 768px)').matches){
+                  //  debugger;
+                    this.isMenuActive= false;
+                    this.$router.go('/mobile/?comp='+ selectedMenu);
+                    return;
+                }
+
+                if(!this.isMenuWide)
+                    store.dispatch('TOGGLE_MENU_WIDE')
 
 
-                this.activeMenuView = a.currentTarget.attributes[0].value;
-
+                this.activeMenuView = selectedMenu
             },
             toggleView (v) {
                 if(this.$route.params.type == "inspiration"){

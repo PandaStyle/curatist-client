@@ -1,6 +1,9 @@
 var vue = require('vue-loader')
 var webpack = require('webpack')
 var imports = require('imports-loader')
+var Dashboard = require('webpack-dashboard');
+var DashboardPlugin = require('webpack-dashboard/plugin');
+var dashboard = new Dashboard();
 
 //TODO: this shouldn't go out to the internet for the request
 const HOST = process.env.NODE_ENV === 'production' ? "http://www.curatist.co/" : "http://localhost:8080/";
@@ -72,4 +75,5 @@ if (process.env.NODE_ENV === 'production') {
   ]
 } else {
   module.exports.devtool = '#source-map'
+  module.exports.plugins = [new DashboardPlugin(dashboard.setData)]
 }

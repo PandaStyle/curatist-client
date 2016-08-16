@@ -22,7 +22,6 @@
 
 <script type="text/babel">
     import FeedItem from './FeedItem.vue'
-    import InspItem from './InspItem.vue'
     import Navbar from './Navbar.vue'
     import Salvattore from 'salvattore'
     import NProgress from 'nprogress';
@@ -40,8 +39,7 @@
         name: 'TileView',
 
         components: {
-            FeedItem,
-            InspItem
+            FeedItem
         },
 
         data () {

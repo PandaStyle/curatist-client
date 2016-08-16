@@ -3,7 +3,7 @@ import Salvattore from 'salvattore';
 import _ from 'lodash';
 import NProgress from 'nprogress';
 
-import InstagramItem from '../components/InstagramItem'
+import InstagramItem from '../components/InstagramItem.js'
 import imagesLoaded from '../../node_modules/imagesloaded/imagesloaded.js';
 
 
