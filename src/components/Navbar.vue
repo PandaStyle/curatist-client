@@ -185,7 +185,7 @@
                 if(window.matchMedia('(max-width: 768px)').matches){
                   //  debugger;
                     this.isMenuActive= false;
-                    this.$router.go('/mobile/?comp='+ selectedMenu);
+                    this.$route.router.go('/mobile/?comp='+ selectedMenu);
                     return;
                 }
 
