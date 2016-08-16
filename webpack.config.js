@@ -71,7 +71,8 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false
       }
     }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    module.exports.plugins = [new DashboardPlugin(dashboard.setData)]
   ]
 } else {
   module.exports.devtool = '#source-map'
