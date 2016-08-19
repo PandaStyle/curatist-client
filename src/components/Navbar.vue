@@ -36,22 +36,22 @@
 
         <ul class="menu-list" v-bind:class="{border: activeMenuView}">
             <li>
-                <a data-menuview="MenuSettings" class="bordered" v-bind:class="{active: activeMenuView=='MenuSettings'}"  @click="toggleMenuView">Layouts</a>
+                <a data-menuview="MenuSettings"  v-bind:class="{active: activeMenuView=='MenuSettings'}"  @click="toggleMenuView">Layouts</a>
             </li>
             <li>
-                <a data-menuview="MenuWhat" class="bordered" v-bind:class="{active: activeMenuView=='MenuWhat'}"  @click="toggleMenuView">What?</a>
+                <a data-menuview="MenuWhat"  v-bind:class="{active: activeMenuView=='MenuWhat'}"  @click="toggleMenuView">What?</a>
             </li>
             <li>
-                <a data-menuview="MenuAbout"  data-menuview="layouts"class="bordered" v-bind:class="{active: activeMenuView=='MenuAbout'}" @click="toggleMenuView">Who?</a>
+                <a data-menuview="MenuAbout"  data-menuview="layouts" v-bind:class="{active: activeMenuView=='MenuAbout'}" @click="toggleMenuView">Who?</a>
             </li>
             <li>
-                <a data-menuview="MenuFeedback" class="bordered" v-bind:class="{active: activeMenuView=='MenuFeedback'}" @click="toggleMenuView">Thoughts?</a>
+                <a data-menuview="MenuFeedback"  v-bind:class="{active: activeMenuView=='MenuFeedback'}" @click="toggleMenuView">Thoughts?</a>
             </li>
             <li>
-                <a data-menuview="MenuUpdates" class="bordered" v-bind:class="{active: activeMenuView=='MenuUpdates'}"  @click="toggleMenuView">Updates</a>
+                <a data-menuview="MenuUpdates"  v-bind:class="{active: activeMenuView=='MenuUpdates'}"  @click="toggleMenuView">Updates</a>
             </li>
             <li>
-                <a data-menuview="MenuShare" class="bordered" v-bind:class="{active: activeMenuView=='MenuShare'}"  @click="toggleMenuView">Share</a>
+                <a data-menuview="MenuShare"  v-bind:class="{active: activeMenuView=='MenuShare'}"  @click="toggleMenuView">Share</a>
             </li>
         </ul>
         <div class="menucontent">
