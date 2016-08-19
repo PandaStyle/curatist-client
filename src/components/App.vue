@@ -19,7 +19,6 @@
             Navbar
         },
         ready () {
-            amplitude.getInstance().logEvent('App started');
 
             $(window).on("scrollstart", function(){ $('body').addClass('disable-hover');});
             $(window).on("scrollstop", function(){ $('body').removeClass('disable-hover');});

@@ -20,7 +20,7 @@ $button-width: 27px;
     height: 100px;
     width: 220px;
     background-size: contain;
-    background-image: url("../img/Curatist-Logo-Web-White.png");
+    background-image: url("../img/curatist-logo-000.png");
   }
 
   .menu-holder {
@@ -325,7 +325,6 @@ menu {
       vertical-align: baseline;
       list-style: none;
       opacity: 0;
-      font-weight: bold;
 
       a {
         color: $black;
@@ -338,6 +337,7 @@ menu {
 
 
       .suggest {
+
         background: none;
         border: none;
         border-radius: 100%;
@@ -369,9 +369,16 @@ menu {
     display: inline-block;
     max-width: 450px;
 
+
     h2 {
       font-size: 2rem;
       color: $black
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 14px;
+      font-family: $paragraph-font-family;
     }
   }
 
@@ -454,11 +461,11 @@ menu {
 
 
 .dark .logo .logo-img {
-  background-image: url("../img/Curatist-Logo-Web-White.png");
+  background-image: url("../img/curatist-logo-fff.png");
 }
 
 .light .logo .logo-img {
-  background-image: url("../img/Curatist-logo-Web-Black.png");
+  background-image: url("../img/curatist-logo-000.png");
 }
 
 .sticky .menu-holder{

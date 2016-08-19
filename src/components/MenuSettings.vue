@@ -39,6 +39,7 @@
 
         methods: {
             toggleCombo (view, theme) {
+                amplitude.getInstance().logEvent('layout change clicked',  {'view': view, 'theme': theme} );
                 this.$parent.toggleView(view);
                 this.$parent.toggleTheme(theme)
             },

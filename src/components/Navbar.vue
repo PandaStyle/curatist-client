@@ -162,6 +162,7 @@
 
         methods: {
             toggleMenu () {
+                amplitude.getInstance().logEvent('menu clicked');
                 this.isMenuActive = !this.isMenuActive;
 
                 //if not on mobile
@@ -180,6 +181,7 @@
 
             },
             toggleMenuView (a) {
+                amplitude.getInstance().logEvent('menu item clicked: ' + a.currentTarget.attributes[0].value);
                 let selectedMenu = a.currentTarget.attributes[0].value;
 
                 if(window.matchMedia('(max-width: 768px)').matches){
@@ -225,7 +227,10 @@
 
                 /* sticky */
                 let pos = 125;
-                $(window).scrollTop() > pos ? $('body').addClass('sticky') : $('body').removeClass('sticky')
+
+                if(!window.matchMedia('(max-width: 768px)').matches) {
+                    $(window).scrollTop() > pos ? $('body').addClass('sticky') : $('body').removeClass('sticky')
+                }
 
 
                 /* mobile nav */

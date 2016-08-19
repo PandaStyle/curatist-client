@@ -19,13 +19,15 @@
     display: none !important;
   }
   #doorbell-submit-button {
-    font-size: 20px;
-    padding: 15px 15px;
+    font-size: 18px;
+    padding: 8px 15px;
     border: none;
+    font-weight: bold;
+    font-family: $paragraph-font-family;
     background-color: #B2E2B6;
-    width: 100%;
+    width: 30%;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    margin: 15px auto;
 
     &:hover {
       @include defaulttransition();
@@ -44,6 +46,10 @@
 
   #doorbell.doorbell-inline #doorbell-container {
     width: 100%;
+  }
+
+  #doorbell-error {
+    color: red;
   }
 
 }
