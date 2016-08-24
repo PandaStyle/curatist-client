@@ -3,10 +3,12 @@
 #feedback-container {
   font-family: 'Muli', sans-serif;
   font-size: 14px;
-  min-width: 500px;
+  min-width: 420px;
   position: relative;
 
   textarea, input {
+    width: 420px !important;
+    padding: 4px 10px !important;
     background: none;
     border: 1px solid $grey;
     padding-top: 10px !important;
@@ -14,12 +16,18 @@
     line-height: 22px;
   }
 
+  textarea {
+    height: 120px !important;
+  }
+
   #doorbell-powered-by {
     color: $grey;
     display: none !important;
   }
   #doorbell-submit-button {
-    font-size: 18px;
+    color: $dark-grey;
+    font-size: 14px;
+    letter-spacing: 1px;
     padding: 8px 15px;
     border: none;
     font-weight: bold;
@@ -30,6 +38,7 @@
     margin: 15px auto;
 
     &:hover {
+      color: #000;
       @include defaulttransition();
       background-color: #8FCE94;
     }

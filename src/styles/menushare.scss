@@ -1,13 +1,43 @@
 @import "globals";
 
 .menushare {
-    a {
-      font-size: 30px;
-      font-family: $heading-font-family;
-      display: block;
-      margin: 20px auto;
-      color: $black;
-      font-weight: 400;
-      cursor: pointer;
+    .sharecont {
+      margin-top: 20px;
     }
+
+    a {
+      @include defaulttransition();
+      font-weight: 600;
+      border-right: 1px solid $light-grey;
+      padding: 30px;
+      font-size: 24px !important;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: $heading-font-family;
+      display: inline-block;
+      margin: 20px auto;
+      color: $grey;
+      cursor: pointer;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border: none;
+      }
+
+      &.share-facebook:hover {
+        color: $facebook-color
+      }
+
+      &.share-twitter:hover {
+        color: $twitter-color
+      }
+
+      &.share-linkedin:hover {
+        color: $linkedin-color
+      }
+    }
+
 }

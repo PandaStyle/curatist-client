@@ -265,6 +265,19 @@ menu {
   -webkit-transform: translate3d(-100%,0,0);
   transform: translate3d(-100%,0,0);
 
+  .menu-logo {
+    position: absolute;
+    margin-top: 66px;
+    z-index: 1000000;
+    width: 176px;
+    background-image: url(http://localhost:8080/static/3579721f148a2f59d17ec1f26da7c96b.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50px;
+    margin-left: 10px;
+    bottom: 20px;
+  }
+
   li {
     @include cubictransform(.2s);
 
@@ -310,7 +323,7 @@ menu {
     padding-left: 20px;
     width: 225px;
     position: relative;
-    top: 15%;
+    top: 60px;
     float: left;
 
     &.border {
@@ -320,7 +333,7 @@ menu {
 
 
     li {
-      font-size: 2em;
+      font-size: 1.8em;
       line-height: 1.6em;
       vertical-align: baseline;
       list-style: none;
@@ -373,9 +386,11 @@ menu {
   }
 
   .menucontent {
+    max-height: 90vh;
+    overflow: auto;
     float: left;
     position: relative;
-    top: 15%;
+    top: 44px;
     padding: 0 0 0 80px;
     display: inline-block;
     max-width: 450px;

@@ -33,6 +33,8 @@
 
 
     <menu v-bind:class="{open: isMenuActive, wide: isMenuWide}">
+        <div class="menu-logo">
+        </div>
 
         <ul class="menu-list" v-bind:class="{border: activeMenuView}">
             <li>
