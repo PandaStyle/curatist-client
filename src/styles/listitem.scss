@@ -38,92 +38,106 @@
   }
 
   .title {
-      height: 34px;
-      line-height: 1.2;
-      letter-spacing: 0;
-      font-family: $heading-font-family;
-      font-weight: 700;
-      font-size: 23px;
-      margin-bottom: 10px;
-      color: #F1F1F1;
-      text-decoration: none;
-      overflow: hidden;
+    height: 34px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-family: $heading-font-family;
+    font-weight: 700;
+    font-size: 23px;
+    margin-bottom: 10px;
+    color: #F1F1F1;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .summary {
+    overflow: hidden;
+    max-height: 64px;
+    line-height: 22px;
+    margin-bottom: 10px;
+    font-size: $summary-font-size;
+    font-weight: 300;
+    color: $summary-color;
+  }
+
+  .meta {
+    font-size: 13px;
+    margin: 0 !important;
+
+    .host {
+      padding-right: 15px;
+      color: $red;
     }
 
-    .summary {
-      overflow: hidden;
-      max-height: 64px;
-      line-height: 22px;
-      margin-bottom: 10px;
-      font-size: $summary-font-size;
-      font-weight: 300;
+    .sep {
+      margin: 0 15px;
+    }
+
+    .diff {
       color: $summary-color;
     }
 
-    .meta {
-      font-size: 13px;
-      margin: 0 !important;
+    .share {
+      @include defaulttransition();
 
-      .host {
-        padding-right: 15px;
-        color: $red;
+      display: inline-block;
+      color: white;
+      font-size: 18px;
+      opacity: 0;
+      text-decoration: none;
+      vertical-align: bottom;
+
+      &:hover {
+        color: $red !important;
+        cursor: pointer;
       }
 
-      .sep {
-        margin: 0 15px;
+      &.active {
+        color: $red !important;
       }
+    }
 
-      .diff {
-        color: $summary-color;
+    .share.active {
+      & ~ .share {
+        opacity: 1;
       }
+    }
 
-      .share {
-        @include defaulttransition();
+    .share.general {
+      margin-left: 15px;
+      margin-right: 5px;
+    }
 
-        display: inline-block;
-        color: white;
-        font-size: 18px;
-        opacity: 0;
-        text-decoration: none;
-        vertical-align: bottom;
+    .share.twitter {
+      transition-delay: .05s;
+      margin: 0 3px;
+    }
 
-        &:hover {
-          color: $red !important;
-          cursor: pointer;
-        }
-
-        &.active {
-          color: $red !important;
-        }
-      }
-
-      .share.general {
-        margin-left: 15px;
-        margin-right: 5px;
-      }
-
-      .share.twitter {
-        margin: 0 3px;
-      },
     .share.twitter:hover {
       color: $twitter-color !important;
     }
-      .share.facebook {
-        margin: 0 3px;
-      },
+
+    .share.facebook {
+      transition-delay: .1s;
+      margin: 0 3px;
+    }
+
     .share.facebook:hover {
       color: $facebook-color !important;
-    },
+    }
+
     .share.linkedin {
+      transition-delay: .15s;
       margin: 0 5px;
-    },
+    }
+
     .share.linkedin:hover {
       color: $linkedin-color !important;
     }
 
-    }
+  }
 
-  &:hover .meta .share  {
+  &:hover .meta .share.general {
     opacity: 1;
   }
 

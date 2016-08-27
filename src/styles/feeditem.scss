@@ -118,26 +118,36 @@
         }
       }
 
+      .share.active  {
+        &~.share {
+          opacity: 1;
+        }
+      }
+
+
       .share.general {
         margin-left: 5px;
       }
 
       .share.twitter {
+        transition-delay: .15s;
         margin: 0 5px;
       }
-      .share .twitter:hover {
+      .share.twitter:hover {
         color: $twitter-color !important;
       }
       .share.facebook {
+        transition-delay: .1s;
         margin: 0 5px;
       }
-      .share .facebook:hover {
+      .share.facebook:hover {
         color: $facebook-color !important;
       }
-      .share .linkedin {
+      .share.linkedin {
+        transition-delay: .05s;
         margin: 0 5px;
       }
-      .share .linkedin:hover {
+      .share.linkedin:hover {
         color: $linkedin-color !important;
       }
     }
@@ -171,7 +181,7 @@
     }
   }
 
-  &:hover header .meta .share {
+  &:hover header .meta .share.general {
     opacity: 1;
   }
 }
