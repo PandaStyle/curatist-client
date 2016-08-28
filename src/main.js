@@ -14,16 +14,14 @@ import InstagramView from './components/Instagram.vue'
 
 import MobilePages from './components/MobilePages.vue'
 
+import $ from 'jquery'
 
-import $ from 'jquery';
-
-Vue.use(Router);
-Vue.use(VueResource);
+Vue.use(Router)
+Vue.use(VueResource)
 Vue.use(lazyload, {
     loading: '../loading-spin.svg',
     try: 5 // default 1
 })
-
 
 Vue.directive('img', function (url) {
 

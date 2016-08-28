@@ -10,24 +10,56 @@ server.connection({
     port: 8082
 });
 
+
+
 server.route({
     method: 'GET',
     path: '/{param*}',
     handler: {
         directory: {
             path: '.',
-            index: true
+            index: false
         }
     }
 });
 
 server.route({
     method: 'GET',
-    path: '/add',
-    handler: function (request, reply) {
-        reply.file('admin/lite/index.html');
+    path: '/welcome/{param*}',
+    handler: {
+        directory: {
+            path: './landing',
+            index: true
+        }
     }
 });
+
+
+server.route({
+    method: 'GET',
+    path: '/app',
+    handler: function (request, reply) {
+        reply.file('./index.html');
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/app/',
+    handler: function (request, reply) {
+        reply.redirect('/app');
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/',
+    handler: function (request, reply) {
+        reply.redirect('/welcome');
+    }
+});
+
+
 
 server.start(function (err) {
 

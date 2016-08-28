@@ -1,9 +1,7 @@
 var vue = require('vue-loader')
+var path = require('path')
 var webpack = require('webpack')
 var imports = require('imports-loader')
-var Dashboard = require('webpack-dashboard');
-var DashboardPlugin = require('webpack-dashboard/plugin');
-var dashboard = new Dashboard();
 
 //TODO: this shouldn't go out to the internet for the request
 const HOST = process.env.NODE_ENV === 'production' ? "http://www.curatist.co/" : "http://localhost:8080/";
@@ -12,8 +10,8 @@ const HOST = process.env.NODE_ENV === 'production' ? "http://www.curatist.co/" :
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: './static',
-    publicPath: HOST + 'static/',
+    path: path.resolve(__dirname, 'static/'),
+    publicPath: '/static/',
     filename: 'build.js'
   },
   module: {
@@ -22,7 +20,7 @@ module.exports = {
         test: /imagesloaded/,
         loader: 'imports?define=>false&this=>window'
       },
-      {
+      { 
         test: /\.vue$/,
         loader: 'vue'
       },
@@ -33,12 +31,20 @@ module.exports = {
         exclude: /node_modules|vue\/src|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
         loader: 'babel'
       },
-      {
+    /*  {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
           'file?hash=sha512&digest=hex&name=[hash].[ext]',
           'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
+      },*/
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'url',
+        query: {
+          limit: 10000,
+          name: '[name].[ext]?[hash]'
+        }
       },
       {
         test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
@@ -72,9 +78,7 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new DashboardPlugin(dashboard.setData)
   ]
 } else {
-  module.exports.devtool = '#source-map',
-  module.exports.plugins = [new DashboardPlugin(dashboard.setData)]
+  module.exports.devtool = '#source-map'
 }
