@@ -122,6 +122,7 @@
   <script src="js/webflow.js" type="text/javascript"></script>
   <script>
       window.doorbellOptions = {
+        hideButton: true,
         appKey: 'QnzkAeEgdFD1Ic0zOk2X1PlRB6FapNxTUFvsfLaZijH7DjiQL2cN31BRVlGNj5tC'
       };
       (function(d, t) {
@@ -129,7 +130,7 @@
       }(document, 'script'));
 
       function sendFromMyForm() {
-          doorbell.send(document.getElementById('field-3').value, document.getElementById('email-3').value, function() { alert('success'); }, function(error) { alert('Oh no! '+error); });
+          doorbell.send(document.getElementById('field-3').value, document.getElementById('email-3').value, function() { console.log('success'); }, function(error) { console.log('Oh no! '+error); });
       }
   </script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
