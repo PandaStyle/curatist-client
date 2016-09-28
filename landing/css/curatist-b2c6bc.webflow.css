@@ -135,6 +135,7 @@ blockquote {
 }
 
 .center {
+  margin-top: 0px;
   color: #6d6d6d;
   font-size: 18px;
   line-height: 30px;
@@ -152,6 +153,12 @@ blockquote {
   color: #2c3739;
   font-size: 1.5rem;
   line-height: 2.3rem;
+  font-weight: 700;
+}
+
+.center.gap {
+  margin-top: 60px;
+  color: #000;
 }
 
 .light {
@@ -203,8 +210,8 @@ blockquote {
   padding-top: 130px;
   padding-bottom: 130px;
   background-color: #dc8a8a;
-  background-image: -webkit-linear-gradient(44deg, #f19292, #dc8a8a 74%);
-  background-image: linear-gradient(46deg, #f19292, #dc8a8a 74%);
+  background-image: -webkit-radial-gradient(circle farthest-corner at 50% 50%, #dc8a8a 36%, #f87272);
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, #dc8a8a 36%, #f87272);
   background-position: 0px 0px;
   background-size: auto;
   color: #dc8a8a;
@@ -223,16 +230,23 @@ blockquote {
 .section.center.intro.tile-bg {
   padding-top: 130px;
   padding-bottom: 130px;
-  background-image: -webkit-linear-gradient(270deg, rgba(27, 17, 17, .83), rgba(27, 17, 17, .83)), url('../images/Screen Shot 2016-08-20 at 12.36.54 PM.jpg');
-  background-image: linear-gradient(180deg, rgba(27, 17, 17, .83), rgba(27, 17, 17, .83)), url('../images/Screen Shot 2016-08-20 at 12.36.54 PM.jpg');
-  background-position: 0px 0px, 50% 50%;
-  background-size: auto, cover;
-  background-attachment: scroll, scroll;
+  background-image: -webkit-radial-gradient(circle farthest-corner at 50% 50%, transparent 33%, #000), -webkit-linear-gradient(270deg, rgba(26, 14, 14, .6), rgba(26, 14, 14, .6)), url('../images/MANHATTAN.jpg');
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, transparent 33%, #000), linear-gradient(180deg, rgba(26, 14, 14, .6), rgba(26, 14, 14, .6)), url('../images/MANHATTAN.jpg');
+  background-position: 0px 0px, 0px 0px, 50% 50%;
+  background-size: auto, auto, cover;
+  background-attachment: scroll, scroll, scroll;
 }
 
 .section.features.center {
   background-color: #fff;
   font-size: 1rem;
+}
+
+.section.intro.center {
+  background-image: -webkit-radial-gradient(circle farthest-corner at 50% 50%, transparent 51%, #000), -webkit-linear-gradient(270deg, rgba(26, 14, 14, .55), rgba(26, 14, 14, .55)), url('../images/screenshot_inspiration_lowres.jpg');
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, transparent 51%, #000), linear-gradient(180deg, rgba(26, 14, 14, .55), rgba(26, 14, 14, .55)), url('../images/screenshot_inspiration_lowres.jpg');
+  background-position: 0px 0px, 0px 0px, 50% 52%;
+  background-attachment: scroll, scroll, scroll;
 }
 
 .title {
@@ -241,7 +255,7 @@ blockquote {
   padding-bottom: 20px;
   font-family: 'Playfair Display', sans-serif;
   color: #2c3739;
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 1.1em;
   font-weight: 900;
   text-align: center;
@@ -414,7 +428,7 @@ blockquote {
   margin-top: 60px;
   margin-bottom: 0px;
   color: #fff;
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   line-height: 3.2rem;
   font-weight: 700;
 }
@@ -444,7 +458,7 @@ blockquote {
 .extension-p {
   padding-right: 15%;
   padding-left: 15%;
-  color: #2c3739;
+  color: #fff;
 }
 
 .extension-p.white {
@@ -457,6 +471,10 @@ blockquote {
   font-weight: 400;
 }
 
+.extension-p.ext-p-white {
+  color: #fff;
+}
+
 .p-layout {
   margin-top: 1px;
   padding-bottom: 0px;
@@ -465,6 +483,10 @@ blockquote {
   font-size: 1rem;
   line-height: 2rem;
   font-weight: 400;
+}
+
+.p-layout.coral {
+  color: #dc8a8a;
 }
 
 .red {
@@ -503,6 +525,11 @@ blockquote {
   font-size: 3rem;
   line-height: 4rem;
   font-weight: 900;
+}
+
+.h2-black.h2-white {
+  color: #fff;
+  font-size: 2.5rem;
 }
 
 .h3-caps {
@@ -619,6 +646,10 @@ blockquote {
   text-align: center;
 }
 
+.social-icon.icon-2-center {
+  margin-left: 300px;
+}
+
 .social-text {
   margin-top: 20px;
   margin-left: 10px;
@@ -707,8 +738,8 @@ blockquote {
   display: inline-block;
   margin-top: 0px;
   padding-top: 8px;
-  background-color: #fff;
-  color: #815252;
+  background-color: transparent;
+  color: #dc8a8a;
   font-size: 14px;
   line-height: 12px;
 }
@@ -734,14 +765,14 @@ blockquote {
   color: #fff;
   font-size: 3em;
   line-height: 51px;
-  font-weight: 400;
+  font-weight: 700;
   text-align: left;
 }
 
 .about-h3 {
   color: #dc8a8a;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .about-curatist-desc.section {
@@ -768,7 +799,7 @@ blockquote {
 
 .about-us-div {
   padding-top: 36px;
-  padding-bottom: 299px;
+  padding-bottom: 300px;
   padding-left: 20px;
   background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/about-us2.jpg');
   background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/about-us2.jpg');
@@ -781,6 +812,7 @@ blockquote {
   margin-top: 0px;
   color: #fff;
   font-size: 3em;
+  font-weight: 700;
   text-align: left;
   text-decoration: none;
 }
@@ -789,7 +821,7 @@ blockquote {
   margin-top: 20px;
   color: #dc8a8a;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .about-us-image {
@@ -820,16 +852,19 @@ blockquote {
 
 .image-section.section {
   margin-bottom: 100px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .contact-div {
+  margin-bottom: 100px;
   padding-top: 36px;
   padding-bottom: 20px;
   padding-left: 20px;
-  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/MANHATTAN.jpg');
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/MANHATTAN.jpg');
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/black-and-white-city-man-people (2).jpg');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/black-and-white-city-man-people (2).jpg');
   background-position: 0px 0px, 50% 50%;
-  background-size: auto, cover;
+  background-size: auto, 960px;
 }
 
 .newgrey {
@@ -904,8 +939,8 @@ blockquote {
   direction: ltr;
   font-family: 'Playfair Display', sans-serif;
   color: #dc8a8a;
-  font-size: 40px;
-  font-weight: 900;
+  font-size: 36px;
+  font-weight: 700;
   text-decoration: underline;
 }
 
@@ -939,6 +974,7 @@ blockquote {
 
 .contact-name-cont {
   margin-top: 21px;
+  margin-bottom: 51px;
   padding-right: 20px;
   padding-left: 20px;
   text-align: center;
@@ -992,13 +1028,26 @@ blockquote {
   font-weight: 600;
 }
 
+.h3-bold.h3-b-white {
+  color: #fff;
+}
+
 .platform-img {
   max-width: 40px;
   margin-bottom: 20px;
 }
 
+.platform-img.platform-img-white {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
 .platform-text-color {
   color: #2c3739;
+}
+
+.platform-text-color.h4-white {
+  color: #f5f5f5;
 }
 
 .footer-link {
@@ -1026,6 +1075,29 @@ blockquote {
   float: right;
   color: #dc8a8a;
   text-align: center;
+}
+
+.h2-white {
+  color: #fff;
+  font-size: 3em;
+}
+
+.mail-list {
+  margin-top: 40px;
+  font-family: Poppins, sans-serif;
+  color: #f5f5f5;
+}
+
+.review-quote {
+  border-style: none;
+}
+
+.social-row {
+  margin-bottom: 50px;
+}
+
+.about-link {
+  color: #dc8a8a;
 }
 
 html.w-mod-js *[data-ix="initial-load"] {
