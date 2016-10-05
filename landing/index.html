@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Wed Sep 28 2016 16:31:41 GMT+0000 (UTC) -->
+<!--  This site was created in Webflow. http://www.webflow.com -->
+<!--  Last Published: Wed Oct 05 2016 02:41:01 GMT+0000 (UTC)  -->
 <html data-wf-page="5796e4b7a36d1be947c37b76" data-wf-site="5796e4b7a36d1be947c37b75">
 <head>
   <meta charset="utf-8">
@@ -19,6 +19,23 @@
     });
   </script>
   <script src="js/modernizr.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script");r.type="text/javascript";
+      r.async=true;r.src="https://d24n15hnbwhuhn.cloudfront.net/libs/amplitude-3.1.0-min.gz.js";
+      r.onload=function(){e.amplitude.runQueuedFunctions()};var i=t.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(r,i);function s(e,t){e.prototype[t]=function(){this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
+        return this}}var o=function(){this._q=[];return this};var a=["add","append","clearAll","prepend","set","setOnce","unset"];
+      for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[];return this;
+      };var p=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"];
+      for(var l=0;l<p.length;l++){s(c,p[l])}n.Revenue=c;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId"];
+      function v(e){function t(t){e[t]=function(){e._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
+      }}for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){e=(!e||e.length===0?"$default_instance":e).toLowerCase();
+        if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]};e.amplitude=n;
+    })(window,document);
+
+    amplitude.getInstance().init("f0ed3e87e660199dd3c087000f939dd1");
+    amplitude.getInstance().logEvent('pageload: index ');
+  </script>
   <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
   <style type="text/css">
@@ -69,13 +86,13 @@
         <div class="w-col w-col-6"></div>
       </div>
       <div class="cover-small">
-        <h1 class="title" data-ix="fade-up">Keep ahead, stay focused&nbsp;&amp; get inspired,&nbsp;all at one place.</h1><a class="cta glassed w-button" data-ix="fade-up-delayed-2" href="/app" target="_blank">Use The Curatist</a><a class="chrome-ext cta w-button w-hidden-tiny" data-ix="fade-up-delayed-2" href="/app" target="_blank">Get Chrome&nbsp;Extension</a><img class="cover-img" src="images/gif-white2.gif">
+        <h1 class="title" data-ix="fade-up">Keep ahead, stay focused&nbsp;&amp; get inspired,&nbsp;all at one place.</h1><a class="cta glassed w-button" data-ix="fade-up-delayed-2" href="/app" target="_blank">Use The Curatist</a><a class="chrome-ext cta w-button w-hidden-tiny" data-ix="fade-up-delayed-2" href="https://chrome.google.com/webstore/detail/the-curatist/fohopadbjklifpfnnnfkkjpmjpjpjchk" target="_blank">Get Chrome&nbsp;Extension</a><img class="cover-img" sizes="(max-width: 479px) 90vw, (max-width: 767px) 97vw, (max-width: 991px) 728px, 940px" src="images/Screen-1-white-tiles.png" srcset="images/Screen-1-white-tiles-p-500x305.png 500w, images/Screen-1-white-tiles-p-800x487.png 800w, images/Screen-1-white-tiles-p-1080x658.png 1080w, images/Screen-1-white-tiles.png 1500w">
       </div>
     </div>
   </div>
   <div class="center intro section tile-bg">
     <div class="icon-glasses w-container">
-      <h2 class="paddinged white" data-ix="fade-up-on-scroll">The Curatist is a platform <br>for architects to get informed <br>through multiple sources.</h2><img class="icon-glasses intro-glasses" sizes="(max-width: 479px) 70px, 100px" src="images/Curatist-Glasses-fff.png" srcset="images/Curatist-Glasses-fff-p-500x183.png 500w, images/Curatist-Glasses-fff.png 656w" width="100">
+      <h2 class="paddinged white" data-ix="fade-up-on-scroll">The Curatist is a platform <br>for architects to get insights<br>from multiple sources.</h2><img class="icon-glasses intro-glasses" sizes="(max-width: 479px) 70px, 100px" src="images/Curatist-Glasses-fff.png" srcset="images/Curatist-Glasses-fff-p-500x183.png 500w, images/Curatist-Glasses-fff.png 656w" width="100">
     </div>
   </div>
   <div class="center features section">
@@ -113,7 +130,7 @@
           <h3 class="h3-b-white h3-bold">Website</h3>
           <p class="extension-p">Access all the features as a regular website. Good old fashioned type in and hit enter. Don't forget to bookmark.</p><a class="cta light-button platform w-button" href="/app" target="_blank">See online</a>
         </div>
-        <div class="w-col w-col-4 w-hidden-tiny" data-ix="fade-up-on-scroll-delayed-1"><img class="platform-img platform-img-white" sizes="(max-width: 479px) 100vw, 40px" src="images/chrome.png" srcset="images/chrome-p-500x500.png 500w, images/chrome.png 512w" width="20%">
+        <div class="w-col w-col-4 w-hidden-tiny" data-ix="fade-up-on-scroll-delayed-1"><img class="platform-img platform-img-white" sizes="(max-width: 479px) 100vw, 40px" src="images/chrome_1.png" srcset="images/chrome_1-p-500x500.png 500w, images/chrome_1.png 512w" width="20%">
           <h3 class="h3-b-white h3-bold">Chrome&nbsp;Extension</h3>
           <p class="extension-p">Enjoy easy access to fresh content every time you open a new tab in Chrome with the handy extension.</p><a class="cta light-button platform w-button" href="https://chrome.google.com/webstore/detail/the-curatist/fohopadbjklifpfnnnfkkjpmjpjpjchk" target="_blank">Add it here</a>
         </div>
@@ -125,28 +142,26 @@
     </div>
     <p class="mail-list">Join our mailing list and be the first to know when the mobile app is out!</p>
     <div class="w-embed">
-      <!-- Begin MailChimp Signup Form -->
+      <!--  Begin MailChimp Signup Form  -->
       <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
       <style type="text/css">
         #mc_embed_signup{background:transparent; clear:left; font:14px Helvetica,Arial,sans-serif;  color: "fff"; text-align: center !important;}
-          #mc_embed_signup .email { margin-top: 10px !important; width: 30% !important; margin: 10px auto !important;}
-          #mc-embedded-subscribe {display: block !important; margin: 0 auto !important;  border: 2px solid #f5f5f5 !important; }
-          #mc_embed_signup .mc-field-group { width: 100% !important; padding-bottom: 30px !important;}
+        #mc_embed_signup .email { margin-top: 10px !important; width: 30% !important; margin: 10px auto !important;}
+        #mc-embedded-subscribe {display: block !important; margin: 0 auto !important;  border: 2px solid #f5f5f5 !important; }
+        #mc_embed_signup .mc-field-group { width: 100% !important; padding-bottom: 30px !important;}
         #mc_embed_signup form { padding: 10px 0 10px 0 !important;}
-        	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-        	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
       </style>
       <div id="mc_embed_signup">
-        <form action="//curatist.us14.list-manage.com/subscribe/post?u=24eb812ab2cc9716831b72e7a&amp;id=283d5f061f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <form action="//curatist.us14.list-manage.com/subscribe/post?u=24eb812ab2cc9716831b72e7a&amp;id=283d5f061f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
           <div id="mc_embed_signup_scroll">
             <div class="mc-field-group">
-              <input type="email" value="" placeholder="your email address" name="EMAIL" class="required email" id="mce-EMAIL">
+              <input type="email" value="" name="EMAIL" placeholder="Your Email Address" class="required email" id="mce-EMAIL">
             </div>
             <div id="mce-responses" class="clear">
               <div class="response" id="mce-error-response" style="display:none"></div>
               <div class="response" id="mce-success-response" style="display:none"></div>
             </div>
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <!--  real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
             <div style="position: absolute; left: -5000px;" aria-hidden="true">
               <input type="text" name="b_24eb812ab2cc9716831b72e7a_283d5f061f" tabindex="-1" value="">
             </div>
@@ -156,7 +171,7 @@
           </div>
         </form>
       </div>
-      <!--End mc_embed_signup-->
+      <!-- End mc_embed_signup -->
     </div>
   </div>
   <div class="center layouts section">
@@ -213,13 +228,13 @@
         <br>Curious to see behind the curtains? &nbsp;Find out more <strong class="about-link"><a class="about" href="about.html">about</a></strong> us.&nbsp;</p>
       <div class="share-row w-row">
         <div class="column w-col w-col-4"><img class="social-icon" src="images/twitter-outline.svg">
-          <div class="social-text">Tweet</div>
+          <a class="social-text" id="twitter" onclick="window.open('https://twitter.com/home?status=The%20new%20way%20to%20read%20architecture%20news%20%3A%20The%20Curatist%20http%3A%2F%2Fcuratist.co', 'Share on Twitter', 'resizable,height=500,width=500,left=200,top=200')" >Tweet</a>
         </div>
         <div class="column w-col w-col-4"><img class="social-icon" src="images/facebook-outline.svg">
-          <div class="social-text">Share</div>
+          <a class="social-text" id="facebook" onclick="window.open('https://www.facebook.com/sharer.php?u=http%3A//curatist.co/', 'Share on Facebook', 'resizable,height=500,width=500,left=100,top=100')">Share</a>
         </div>
         <div class="w-col w-col-4"><img class="social-icon" src="images/mail.svg">
-          <div class="social-text">Mail</div>
+          <a class="social-text" href="mailto:hello@curatist.co?subject=Hello!">Mail</a>
         </div>
       </div>
     </div>
@@ -235,6 +250,6 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
-  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
 </html>

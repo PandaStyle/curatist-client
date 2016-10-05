@@ -176,7 +176,7 @@ blockquote {
 }
 
 .section {
-  padding: 100px 10px;
+  padding: 100px 10px 0px;
 }
 
 .section.cover {
@@ -188,11 +188,11 @@ blockquote {
   padding-top: 0px;
   padding-bottom: 0px;
   background-color: #fff;
-  background-image: -webkit-linear-gradient(270deg, #fff, transparent 65%), -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .7), hsla(0, 0%, 100%, .7)), url('../images/MANHATTAN.jpg');
-  background-image: linear-gradient(180deg, #fff, transparent 65%), linear-gradient(180deg, hsla(0, 0%, 100%, .7), hsla(0, 0%, 100%, .7)), url('../images/MANHATTAN.jpg');
-  background-position: 0px 0px, 0px 0px, 50% 0px;
-  background-size: auto, auto, contain;
-  background-attachment: scroll, scroll, scroll;
+  background-image: -webkit-linear-gradient(270deg, #fff, transparent 65%), -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .7), hsla(0, 0%, 100%, .7));
+  background-image: linear-gradient(180deg, #fff, transparent 65%), linear-gradient(180deg, hsla(0, 0%, 100%, .7), hsla(0, 0%, 100%, .7));
+  background-position: 0px 0px, 0px 0px;
+  background-size: auto, auto;
+  background-attachment: scroll, scroll;
 }
 
 .section.center {
@@ -232,7 +232,7 @@ blockquote {
   padding-bottom: 130px;
   background-image: -webkit-radial-gradient(circle farthest-corner at 50% 50%, transparent 33%, #000), -webkit-linear-gradient(270deg, rgba(26, 14, 14, .6), rgba(26, 14, 14, .6)), url('../images/MANHATTAN.jpg');
   background-image: radial-gradient(circle farthest-corner at 50% 50%, transparent 33%, #000), linear-gradient(180deg, rgba(26, 14, 14, .6), rgba(26, 14, 14, .6)), url('../images/MANHATTAN.jpg');
-  background-position: 0px 0px, 0px 0px, 50% 50%;
+  background-position: 0px 0px, 0px 0px, 50% 0;
   background-size: auto, auto, cover;
   background-attachment: scroll, scroll, scroll;
 }
@@ -335,8 +335,8 @@ blockquote {
   border-width: 2px;
   border-color: #2c3739;
   background-color: transparent;
-  background-image: url('../images/chrome.png');
-  background-position: 18px 50%;
+  background-image: url('../images/chrome_1.png');
+  background-position: 17px 50%;
   background-size: 25px;
   background-repeat: no-repeat;
   color: #2c3739;
@@ -345,11 +345,14 @@ blockquote {
 .cta.chrome-ext:hover {
   border-color: #dc8a8a;
   background-color: #dc8a8a;
+  background-image: url('../images/chrome.png');
+  background-position: 16px 50%;
+  background-size: 25px;
   color: #fff;
 }
 
 .cta.glassed {
-  padding-bottom: 14px;
+  padding-bottom: 16px;
   padding-left: 60px;
   background-image: url('../images/Curatist-Glasses-fff.png');
   background-position: 12px 52%;
@@ -657,7 +660,13 @@ blockquote {
   float: left;
   color: #2c3739;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 400;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.social-text:hover {
+  color: #dc8a8a;
 }
 
 .layout-black {
@@ -861,8 +870,8 @@ blockquote {
   padding-top: 36px;
   padding-bottom: 20px;
   padding-left: 20px;
-  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/black-and-white-city-man-people (2).jpg');
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/black-and-white-city-man-people (2).jpg');
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/black-and-white-city-man-people-2.jpg');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/black-and-white-city-man-people-2.jpg');
   background-position: 0px 0px, 50% 50%;
   background-size: auto, 960px;
 }

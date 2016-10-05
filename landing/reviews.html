@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Wed Sep 28 2016 16:31:41 GMT+0000 (UTC) -->
+<!--  This site was created in Webflow. http://www.webflow.com -->
+<!--  Last Published: Wed Oct 05 2016 02:41:01 GMT+0000 (UTC)  -->
 <html data-wf-page="57c1cd6ef69ff41454c58c65" data-wf-site="5796e4b7a36d1be947c37b75">
 <head>
   <meta charset="utf-8">
@@ -20,6 +20,23 @@
     });
   </script>
   <script src="js/modernizr.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script");r.type="text/javascript";
+      r.async=true;r.src="https://d24n15hnbwhuhn.cloudfront.net/libs/amplitude-3.1.0-min.gz.js";
+      r.onload=function(){e.amplitude.runQueuedFunctions()};var i=t.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(r,i);function s(e,t){e.prototype[t]=function(){this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
+        return this}}var o=function(){this._q=[];return this};var a=["add","append","clearAll","prepend","set","setOnce","unset"];
+      for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[];return this;
+      };var p=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"];
+      for(var l=0;l<p.length;l++){s(c,p[l])}n.Revenue=c;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId"];
+      function v(e){function t(t){e[t]=function(){e._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
+      }}for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){e=(!e||e.length===0?"$default_instance":e).toLowerCase();
+        if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]};e.amplitude=n;
+    })(window,document);
+
+    amplitude.getInstance().init("f0ed3e87e660199dd3c087000f939dd1");
+    amplitude.getInstance().logEvent('pageload: reviews ');
+  </script>
   <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
   <style type="text/css">
@@ -68,16 +85,16 @@
     <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-4">
-          <blockquote>Love it! Thanks for creating it! This is my go-to site for design and architecture now!&nbsp;</blockquote>
-          <div class="review-name">- Tina S.&nbsp;</div>
+          <blockquote>I use The Curatist daily, and I love it because I am regularly inspired by projects I wouldn't be exposed to otherwise. Thanks for creating an elegant platform that centralizes all of these great sources!</blockquote>
+          <div class="review-name">- Ilka L.</div>
         </div>
         <div class="w-col w-col-4">
           <blockquote>The chrome extension has been working really well for me, and I like the improvements and updates. I've been trying to get my friends to use it, too!</blockquote>
           <div class="review-name">- Ben K.&nbsp;</div>
         </div>
         <div class="w-col w-col-4">
-          <blockquote>We look forward to having a one-stop shop for news on a well-designed user interface!</blockquote>
-          <div class="review-name">- Arrowstreet Inc.</div>
+          <blockquote>Love it! Thanks for creating it! This is my go-to site for design and architecture now!</blockquote>
+          <div class="review-name">- Tina S.</div>
         </div>
       </div>
     </div>
@@ -101,7 +118,7 @@
           </div>
           <label class="label" for="field-3">Your review</label>
           <textarea class="textarea w-input" data-name="Field 3" id="field-3" maxlength="5000" name="field-3"></textarea>
-          <input class="submit w-button" data-wait="Please wait..." type="submit" value="Submit" onclick="sendFromMyForm();">
+          <input class="submit w-button" data-wait="Please wait..." type="submit" value="Submit">
         </form>
         <div class="w-form-done">
           <div>Thank you! Your submission has been received!</div>
@@ -120,19 +137,6 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
-  <script>
-      window.doorbellOptions = {
-        hideButton: true,
-        appKey: 'QnzkAeEgdFD1Ic0zOk2X1PlRB6FapNxTUFvsfLaZijH7DjiQL2cN31BRVlGNj5tC'
-      };
-      (function(d, t) {
-        var g = d.createElement(t);g.id = 'doorbellScript';g.type = 'text/javascript';g.async = true;g.src = 'https://embed.doorbell.io/button/2825?t='+(new Date().getTime());(d.getElementsByTagName('head')[0]||d.getElementsByTagName('body')[0]).appendChild(g);
-      }(document, 'script'));
-
-      function sendFromMyForm() {
-          doorbell.send(document.getElementById('field-3').value, document.getElementById('email-3').value, function() { console.log('success'); }, function(error) { console.log('Oh no! '+error); });
-      }
-  </script>
-  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
 </html>
