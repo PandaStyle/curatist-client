@@ -1109,6 +1109,16 @@ blockquote {
   color: #dc8a8a;
 }
 
+a.about {
+  color: #dc8a8a;
+}
+a.footer-link:hover {
+  color: #dc8a8a;
+}
+.footer .mail{
+  text-decoration: none;
+}
+
 html.w-mod-js *[data-ix="initial-load"] {
   opacity: 0;
 }
