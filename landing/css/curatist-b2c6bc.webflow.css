@@ -1124,6 +1124,10 @@ a.footer-link:hover{
   color: #dc8a8a;
 }
 
+a.about {
+  text-decoration: none;
+}
+
 .footer .mail {
   text-decoration: none;
 }
