@@ -671,6 +671,12 @@ blockquote {
   color: #2c3739;
   font-size: 1.3rem;
   font-weight: 600;
+  text-decoration: none;
+}
+
+.social-text:hover {
+  color: #dc8a8a;
+  cursor: pointer;
 }
 
 .layout-black {
@@ -1441,3 +1447,5 @@ html.w-mod-js *[data-ix="fade-up-on-scroll-delayed-2"] {
     margin-left: auto;
   }
 }
+
+
